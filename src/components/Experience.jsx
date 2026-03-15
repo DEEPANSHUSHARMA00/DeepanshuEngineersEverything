@@ -1,6 +1,10 @@
+import { domMax, LazyMotion, m, useReducedMotion } from "framer-motion";
 import SectionShell from "../sections/SectionShell";
+import { motionEase } from "../sections/motion";
 
 function Experience({ content }) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <SectionShell
       id="experience"
@@ -8,45 +12,39 @@ function Experience({ content }) {
       title={content.title}
       description={content.description}
     >
-      <div className="glass-card rounded-[1.75rem] p-6 sm:p-8">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-          <div className="space-y-4">
-            <p className="font-mono text-xs uppercase tracking-[0.34em] text-cyan-300">Role</p>
-            <h3 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">{content.role}</h3>
-            <p className="max-w-md text-base leading-8 text-slate-400">{content.summary}</p>
-          </div>
+      <LazyMotion features={domMax} strict>
+        <div className="flex flex-col gap-8">
+          {content.roles.map((job, index) => (
+            <m.article
+              key={index}
+              className="group relative rounded-[1.8rem] border border-white/10 bg-white/[0.02] p-6 transition duration-300 hover:bg-white/[0.04] sm:p-8"
+              initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+              whileInView={reduceMotion ? false : { opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.4, delay: index * 0.1, ease: motionEase }}
+            >
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">{job.role}</h3>
+                  <p className="mt-1 text-lg text-cyan-300">{job.company}</p>
+                </div>
+                <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.05] px-4 py-1.5 text-sm text-slate-300">
+                  {job.period}
+                </span>
+              </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5">
-              <p className="font-mono text-xs uppercase tracking-[0.34em] text-cyan-300">Core Activities</p>
-              <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300 sm:text-base">
-                {content.activities.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-300" />
-                    <span>{item}</span>
+              <ul className="mt-6 flex flex-col gap-3">
+                {job.responsibilities.map((task, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-300">
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                    <span className="text-sm leading-7 sm:text-base">{task}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5">
-              <p className="font-mono text-xs uppercase tracking-[0.34em] text-cyan-300">Technology Exposure</p>
-              <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300 sm:text-base">
-                {content.exposure.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-300" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+            </m.article>
+          ))}
         </div>
-
-        <div className="mt-6 rounded-[1.5rem] border border-dashed border-cyan-300/20 bg-cyan-300/[0.04] p-5 text-sm leading-7 text-slate-300 sm:text-base">
-          {content.takeaway}
-        </div>
-      </div>
+      </LazyMotion>
     </SectionShell>
   );
 }

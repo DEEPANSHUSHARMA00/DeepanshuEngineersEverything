@@ -6,6 +6,7 @@ import Philosophy from "./components/Philosophy";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
+import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import {
@@ -15,6 +16,7 @@ import {
   footer,
   hero,
   navItems,
+  certifications,
   philosophy,
   projects,
   skills,
@@ -81,6 +83,7 @@ function App() {
           <Projects items={projects} />
           <Skills groups={skills} />
           <Experience content={experience} />
+          <Certifications content={certifications} />
           <Contact content={contact} />
         </motion.main>
 
