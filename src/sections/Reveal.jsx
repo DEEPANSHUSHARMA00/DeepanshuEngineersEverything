@@ -1,49 +1,28 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { revealVariants } from "./motion";
 
-function Reveal({ as: Tag = "div", className = "", delay = 0, children, ...props }) {
-  const [visible, setVisible] = useState(false);
+function Reveal({ as = "div", className = "", delay = 0, children, ...props }) {
   const elementRef = useRef(null);
-
-  useEffect(() => {
-    const element = elementRef.current;
-
-    if (!element) {
-      return undefined;
-    }
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.18,
-      }
-    );
-
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
+  const inView = useInView(elementRef, {
+    once: true,
+    amount: 0.18,
+  });
+  const reduceMotion = useReducedMotion();
+  const MotionTag = motion[as] ?? motion.div;
 
   return (
-    <Tag
+    <MotionTag
       ref={elementRef}
-      className={`${className} transform-gpu transition duration-700 ease-out ${visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      className={className}
+      initial={reduceMotion ? false : "hidden"}
+      animate={reduceMotion ? "visible" : inView ? "visible" : "hidden"}
+      variants={revealVariants}
+      custom={delay / 1000}
       {...props}
     >
       {children}
-    </Tag>
+    </MotionTag>
   );
 }
 

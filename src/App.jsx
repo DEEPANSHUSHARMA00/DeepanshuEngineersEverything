@@ -1,3 +1,4 @@
+import { MotionConfig, motion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -18,30 +19,65 @@ import {
   projects,
   skills,
 } from "./assets/portfolioContent";
+import { pageTransition } from "./sections/motion";
 import useActiveSection from "./sections/useActiveSection";
 
 function App() {
   const activeSection = useActiveSection(navItems);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-slate-950 text-slate-100">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_30%),radial-gradient(circle_at_top_right,rgba(167,139,250,0.12),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(45,212,191,0.14),transparent_28%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:84px_84px] opacity-20 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
+    <MotionConfig reducedMotion="user">
+      <motion.div
+        className="relative min-h-screen overflow-x-hidden bg-slate-950 text-slate-100"
+        initial="initial"
+        animate="animate"
+        variants={pageTransition}
+      >
+        <a
+          href="#content"
+          className="sr-only z-[60] rounded-full bg-slate-900 px-4 py-2 text-sm text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Skip to content
+        </a>
+        <motion.div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_30%),radial-gradient(circle_at_top_right,rgba(167,139,250,0.12),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(45,212,191,0.14),transparent_28%)]"
+          animate={{
+            opacity: [0.8, 1, 0.85],
+            scale: [1, 1.03, 1],
+          }}
+          transition={{
+            duration: 16,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:84px_84px] opacity-20 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]"
+        />
 
-      <Navbar navItems={navItems} activeSection={activeSection} />
+        <Navbar navItems={navItems} activeSection={activeSection} />
 
-      <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 pb-16 pt-24 sm:px-6 lg:px-8 lg:pt-28">
-        <Hero hero={hero} />
-        <About content={about} />
-        <Philosophy content={philosophy} />
-        <Projects items={projects} />
-        <Skills groups={skills} />
-        <Experience content={experience} />
-        <Contact content={contact} />
-      </main>
+        <motion.main
+          id="content"
+          className="relative mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 pb-16 pt-0 sm:px-6 lg:px-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.65, delay: 0.1 }}
+        >
+          <Hero hero={hero} />
+          <About content={about} />
+          <Philosophy content={philosophy} />
+          <Projects items={projects} />
+          <Skills groups={skills} />
+          <Experience content={experience} />
+          <Contact content={contact} />
+        </motion.main>
 
-      <Footer content={footer} />
-    </div>
+        <Footer content={footer} />
+      </motion.div>
+    </MotionConfig>
   );
 }
 

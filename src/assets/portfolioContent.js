@@ -1,186 +1,164 @@
+const socialLinks = {
+  email: {
+    label: "Email",
+    href: "mailto:53019969+DEEPANSHUSHARMA00@users.noreply.github.com",
+    meta: "53019969+DEEPANSHUSHARMA00@users.noreply.github.com",
+  },
+  linkedin: {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/deepanshu-sharma-53205a174",
+    meta: "Professional profile",
+  },
+  github: {
+    label: "GitHub",
+    href: "https://github.com/DEEPANSHUSHARMA00",
+    meta: "Code and experiments",
+  },
+};
+
 export const navItems = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
   { id: "philosophy", label: "Philosophy" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
-  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ];
 
 export const hero = {
-  eyebrow: "Backend Engineer | Distributed Systems | Real-Time Data Infrastructure",
   name: "Deepanshu Sharma",
-  tagline:
-    "Designing and operating scalable backend systems focused on event-driven architecture, real-time streaming, and distributed infrastructure.",
-  intro:
-    "Backend engineer with strong interest in distributed systems, data streaming infrastructure, and large scale backend architectures. Focused on understanding how systems communicate, fail, recover, and scale in production environments.",
+  title: "Backend Engineer | Distributed Systems | Event-Driven Architecture",
+  subtitle:
+    "Designing reliable real-time data infrastructure and scalable backend systems.",
   actions: [
     { href: "#projects", label: "View Projects", variant: "primary" },
-    {
-      href: "/Deepanshu-Sharma-Resume.txt",
-      label: "Download Resume",
-      variant: "secondary",
-      download: true,
-    },
-    { href: "#contact", label: "Contact", variant: "ghost" },
+    { href: "#contact", label: "Contact", variant: "secondary" },
   ],
-  technologies: [
-    "Apache Kafka",
-    "Spring Boot",
-    "Redis",
-    "Java",
-    "Linux",
-    "Distributed Systems",
-  ],
-  metrics: [
-    { value: "30", label: "Virtual machines in Kafka lab" },
-    { value: "27", label: "Kafka brokers explored in distributed experiments" },
-    { value: "5+", label: "Core areas of active systems exploration" },
-  ],
-  panelNote:
-    "Building intuition through experiments across streaming systems, service reliability, caching layers, and observability workflows.",
+  rotatingTechnologies: ["Kafka", "Spring Boot", "Redis", "Distributed Systems"],
 };
 
 export const about = {
   eyebrow: "About",
-  title: "Understanding systems beyond frameworks.",
+  title: "Distributed systems intuition built through hands-on exploration.",
   description:
-    "A backend engineer grounded in distributed architecture, production debugging, and real-time data infrastructure.",
+    "Backend engineering focused on real-time infrastructure, failure behavior, and system internals.",
   paragraphs: [
-    "I am a backend engineer focused on building reliable distributed systems and real-time data infrastructure.",
-    "My work and exploration revolve around understanding how large systems behave under scale and failure. I enjoy digging into system internals, from Kafka replication and consumer behavior to how services communicate in event-driven architectures.",
-    "I have experience working in backend environments involving streaming systems, microservices, relational databases, and caching layers. Beyond day-to-day development work, I regularly build infrastructure experiments and distributed system labs to deepen my understanding of how modern data platforms operate.",
+    "Deepanshu Sharma is a backend engineer focused on distributed systems and real-time data infrastructure.",
+    "He enjoys exploring how systems behave under scale and failure and frequently builds infrastructure experiments to understand system internals.",
   ],
-  highlightTitle: "Systems thinking, not framework dependency.",
-  highlightParagraphs: [
-    "My curiosity in technology extends into distributed system design, operating system interaction with application runtimes, JVM behavior, and cloud infrastructure.",
-    "I believe strong engineers should understand systems beyond frameworks. Understanding how components interact internally allows systems to be designed more reliably and debugged more effectively.",
+  profileLabel: "Developer Profile",
+  profileRole: "Backend Engineer",
+  profileFocus: "Distributed Systems | Real-Time Data Infrastructure",
+  profileCaption:
+    "Focused on observing how backend systems communicate, degrade, recover, and scale in production-like environments.",
+  highlights: [
+    "Distributed systems behavior under scale",
+    "Failure analysis and recovery patterns",
+    "Infrastructure experiments and system internals",
   ],
 };
 
 export const philosophy = {
   eyebrow: "Engineering Philosophy",
-  title: "Curiosity first. Black boxes last.",
-  description: "Experiments are how theory becomes production intuition.",
-  paragraphs: [
-    "My approach to engineering is driven by curiosity and system understanding.",
-    "Instead of treating frameworks as black boxes, I try to understand how systems behave internally: how data flows, how components communicate, and how failures propagate through infrastructure.",
-    "Distributed systems are especially interesting because they introduce complex behaviors that only appear under scale or partial failure. Observing these behaviors through experiments helps build intuition that documentation alone cannot provide.",
-    "I enjoy building experimental environments where systems can be deployed, observed, broken, and recovered. This process helps transform theoretical knowledge into practical engineering understanding.",
+  title: "Large-scale systems are worth understanding at their edges.",
+  description:
+    "A minimal set of beliefs that shape how I study, build, and debug backend infrastructure.",
+  quotes: [
+    "Systems should be understood, not just used.",
+    "Distributed systems reveal their truth under failure.",
   ],
-  workflow: [
-    "Study system architecture",
-    "Deploy experimental environment",
-    "Simulate failures or load",
-    "Observe system behavior",
-    "Document insights",
-  ],
+  supportingText:
+    "The most important engineering lessons appear when services slow down, replicas drift, or communication breaks under load. That is why I prefer experiments, observation, and failure-driven learning over treating infrastructure like a black box.",
+  signature: "Curiosity, failure analysis, and systems thinking.",
 };
 
 export const projects = [
   {
     title: "Kafka Distributed Cluster Laboratory",
-    tag: "Distributed Messaging",
-    summary:
-      "Designed and deployed a Kafka experimentation environment to understand how large distributed clusters behave under pressure.",
-    metrics: ["30 virtual machines", "3 ZooKeeper nodes", "27 Kafka brokers"],
-    focus: [
-      "Observe partition leadership behavior",
-      "Study ISR mechanics",
-      "Simulate broker failures",
-      "Analyze cluster recovery and partition reassignment",
+    description:
+      "Designed a large-scale Kafka lab to observe broker coordination, replication behavior, and cluster recovery patterns under controlled failures.",
+    technologies: ["Apache Kafka", "ZooKeeper", "Linux", "Virtual Machines"],
+    details: [
+      "Built a cluster with 30 virtual machines, including 3 ZooKeeper nodes and 27 Kafka brokers.",
+      "Simulated broker outages to observe leader election, ISR movement, and recovery behavior.",
+      "Used the lab to better understand partition reassignment and balancing across brokers.",
     ],
-    learnings: [
-      "Leader election dynamics",
-      "Replication behavior during broker failure",
-      "Partition balancing across brokers",
-      "Cluster resilience under node failures",
-    ],
-  },
-  {
-    title: "Confluent Platform Monitoring Environment",
-    tag: "Observability",
-    summary:
-      "Set up monitoring and cluster visibility to understand the operational side of real-time streaming systems.",
-    focus: [
-      "Monitor Kafka cluster health",
-      "Observe consumer lag",
-      "Analyze topic throughput",
-      "Understand producer and consumer metrics",
-    ],
-    insight:
-      "Operational visibility is essential for managing streaming infrastructure. Good observability exposes system behavior before bottlenecks become incidents.",
+    borderGradient:
+      "linear-gradient(135deg, rgba(56,189,248,0.75), rgba(14,165,233,0.2), rgba(45,212,191,0.65))",
   },
   {
     title: "Redis High Availability Setup",
-    tag: "Caching & Replication",
-    summary:
-      "Implemented a Redis master-replica configuration to study high-availability patterns for in-memory data stores.",
-    metrics: ["Redis master node", "Redis replica node", "Replication monitoring"],
-    focus: [
-      "Replica synchronization behavior",
-      "Replication lag observation",
-      "Failover testing scenarios",
+    description:
+      "Implemented a Redis master-replica environment to study replication flow, synchronization behavior, and availability tradeoffs in caching infrastructure.",
+    technologies: ["Redis", "Linux", "Replication Monitoring", "Networking"],
+    details: [
+      "Set up Redis master and replica nodes to inspect synchronization under normal and degraded conditions.",
+      "Tracked replication lag and data propagation to understand consistency behavior.",
+      "Ran failover-style experiments to build intuition around high-availability patterns.",
     ],
+    borderGradient:
+      "linear-gradient(135deg, rgba(45,212,191,0.78), rgba(20,184,166,0.2), rgba(125,211,252,0.62))",
   },
   {
     title: "CI/CD Pipeline Experiment",
-    tag: "Automation",
-    summary:
-      "Built a Jenkins-based pipeline to understand automated build and deployment workflows end to end.",
-    flow: ["Git Repository", "Jenkins Pipeline", "Build Process", "Deployment"],
-    focus: [
-      "Automate build and deployment processes",
-      "Explore continuous integration practices",
-      "Understand pipeline orchestration",
+    description:
+      "Built a Jenkins-powered delivery pipeline to explore automated build, integration, and deployment workflows from source control to release.",
+    technologies: ["Jenkins", "Git", "Build Automation", "Deployment Pipelines"],
+    details: [
+      "Connected source control changes to automated build and deployment steps.",
+      "Explored how CI systems orchestrate sequential stages and surface failures early.",
+      "Used the pipeline as a practical environment for understanding release automation.",
     ],
+    borderGradient:
+      "linear-gradient(135deg, rgba(167,139,250,0.72), rgba(56,189,248,0.18), rgba(96,165,250,0.62))",
   },
   {
-    title: "Event-Driven Microservices Experiment",
-    tag: "Microservices",
-    summary:
-      "Built experimental microservices interacting through Kafka topics to explore event-driven system architecture.",
-    flow: ["Producer Services", "Kafka Topics", "Consumer Services"],
-    focus: [
-      "Event ordering",
-      "Consumer group behavior",
-      "Partition distribution",
-      "Parallel processing with multiple consumers",
+    title: "Event Driven Microservices Architecture",
+    description:
+      "Built producer and consumer services around Kafka topics to understand message flow, partitioning strategy, and event-driven service communication.",
+    technologies: ["Kafka", "Java", "Spring Boot", "Microservices"],
+    details: [
+      "Connected multiple services through event streams instead of direct service coupling.",
+      "Observed consumer group behavior, partition distribution, and parallel message handling.",
+      "Used the setup to study how event ordering and asynchronous communication affect system design.",
     ],
+    borderGradient:
+      "linear-gradient(135deg, rgba(244,114,182,0.62), rgba(59,130,246,0.18), rgba(45,212,191,0.58))",
   },
 ];
 
 export const skills = [
   {
     category: "Backend",
-    items: ["Java", "Spring Boot", "REST APIs", "Microservices Architecture"],
+    description:
+      "Core backend development centered around Java services and scalable application design.",
+    items: ["Java", "Spring Boot", "Microservices"],
+    accent:
+      "linear-gradient(135deg, rgba(56,189,248,0.72), rgba(59,130,246,0.18), rgba(45,212,191,0.62))",
   },
   {
-    category: "Data Infrastructure",
-    items: ["Apache Kafka", "Event-Driven Architecture", "Stream Processing Concepts"],
-  },
-  {
-    category: "Databases",
-    items: ["MySQL", "Redis"],
+    category: "Streaming",
+    description:
+      "Event-driven thinking and real-time messaging infrastructure for decoupled systems.",
+    items: ["Apache Kafka", "Event Driven Architecture"],
+    accent:
+      "linear-gradient(135deg, rgba(45,212,191,0.78), rgba(20,184,166,0.2), rgba(125,211,252,0.6))",
   },
   {
     category: "Infrastructure",
-    items: ["Linux", "Docker", "Google Cloud Platform"],
+    description:
+      "Deployment and runtime fundamentals that support stable backend environments.",
+    items: ["Linux", "Docker", "Redis"],
+    accent:
+      "linear-gradient(135deg, rgba(167,139,250,0.7), rgba(56,189,248,0.16), rgba(96,165,250,0.6))",
   },
   {
-    category: "System Knowledge",
-    items: ["Distributed system design", "Infrastructure debugging", "Real-time data pipelines"],
-  },
-  {
-    category: "Current Exploration",
-    items: [
-      "Kubernetes orchestration",
-      "Distributed system reliability",
-      "Kafka consumer and producer internals",
-      "Cloud-native infrastructure",
-      "Large scale system design",
-    ],
+    category: "Cloud",
+    description:
+      "Cloud platform exposure for building and operating backend services in modern environments.",
+    items: ["Google Cloud Platform"],
+    accent:
+      "linear-gradient(135deg, rgba(244,114,182,0.62), rgba(59,130,246,0.18), rgba(45,212,191,0.56))",
   },
 ];
 
@@ -211,26 +189,16 @@ export const experience = {
 
 export const contact = {
   eyebrow: "Contact",
-  title: "Open to conversations about systems, streaming, and backend engineering.",
+  title: "Let's connect around backend systems and infrastructure.",
   description:
-    "The best conversations usually start around reliability, architecture tradeoffs, and how systems behave in production.",
+    "A clean place to reach out for engineering conversations, collaboration, or infrastructure-focused discussions.",
   message:
     "I am always interested in conversations about distributed systems, real-time data infrastructure, and backend engineering.",
-  emailLabel: "Email available on request",
-  links: [
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/deepanshu-sharma-53205a174",
-      meta: "Professional profile",
-    },
-    {
-      label: "GitHub",
-      href: "https://github.com/DEEPANSHUSHARMA00",
-      meta: "Code and experiments",
-    },
-  ],
+  links: [socialLinks.email, socialLinks.linkedin, socialLinks.github],
 };
 
 export const footer = {
-  note: "Built with curiosity about distributed systems and modern backend infrastructure.",
+  name: "Deepanshu Sharma",
+  role: "Backend Engineer | Distributed Systems",
+  links: [socialLinks.linkedin, socialLinks.github, socialLinks.email],
 };

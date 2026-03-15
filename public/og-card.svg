@@ -1,0 +1,31 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#020617"/>
+  <rect x="28" y="28" width="1144" height="574" rx="36" fill="url(#paint0_linear)" fill-opacity="0.15" stroke="url(#paint1_linear)"/>
+  <circle cx="960" cy="132" r="118" fill="#38BDF8" fill-opacity="0.12"/>
+  <circle cx="246" cy="512" r="140" fill="#2DD4BF" fill-opacity="0.08"/>
+  <path d="M126 446V182H370C448.977 182 513 246.023 513 325C513 403.977 448.977 468 370 468H126V446Z" fill="#0F172A" stroke="#38BDF8" stroke-width="6"/>
+  <path d="M186 246H350C394.183 246 430 281.817 430 326C430 370.183 394.183 406 350 406H186V246Z" fill="#E2E8F0"/>
+  <path d="M423 124L528 228" stroke="#2DD4BF" stroke-width="18" stroke-linecap="round"/>
+  <text x="584" y="248" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="700">
+    Deepanshu Sharma
+  </text>
+  <text x="584" y="320" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">
+    Backend Engineer | Distributed Systems
+  </text>
+  <text x="584" y="388" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="24">
+    Real-time data infrastructure, Kafka, Spring Boot,
+  </text>
+  <text x="584" y="424" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="24">
+    Redis, event-driven architecture, and scalable systems.
+  </text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="84" y1="40" x2="1090" y2="592" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="66" y1="48" x2="1080" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+  </defs>
+</svg>

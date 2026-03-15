@@ -1,9 +1,12 @@
-function SectionHeading({ eyebrow, title, description }) {
+function SectionHeading({ eyebrow, title, description, titleId }) {
   return (
     <div className="section-heading">
       <div className="max-w-3xl">
         <p className="eyebrow mb-4">{eyebrow}</p>
-        <h2 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+        <h2
+          id={titleId}
+          className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl"
+        >
           {title}
         </h2>
       </div>

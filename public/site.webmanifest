@@ -1,0 +1,16 @@
+{
+  "name": "Deepanshu Sharma Portfolio",
+  "short_name": "Deepanshu",
+  "description": "Backend engineer portfolio focused on distributed systems and real-time data infrastructure.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
