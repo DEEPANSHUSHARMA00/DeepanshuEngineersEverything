@@ -1,6 +1,6 @@
-import SectionShell from "./SectionShell";
+import SectionShell from "../sections/SectionShell";
 
-function EngineeringPhilosophy({ content }) {
+function Philosophy({ content }) {
   return (
     <SectionShell
       id="philosophy"
@@ -37,4 +37,4 @@ function EngineeringPhilosophy({ content }) {
   );
 }
 
-export default EngineeringPhilosophy;
+export default Philosophy;

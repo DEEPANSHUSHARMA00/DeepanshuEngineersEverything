@@ -1,4 +1,4 @@
-import SectionShell from "./SectionShell";
+import SectionShell from "../sections/SectionShell";
 
 function Skills({ groups }) {
   return (

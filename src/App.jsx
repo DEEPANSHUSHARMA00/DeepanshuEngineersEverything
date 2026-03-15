@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import EngineeringPhilosophy from "./components/EngineeringPhilosophy";
+import Philosophy from "./components/Philosophy";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
@@ -18,38 +17,11 @@ import {
   philosophy,
   projects,
   skills,
-} from "./data/portfolio";
-
-const sectionIds = navItems.map((item) => item.id);
+} from "./assets/portfolioContent";
+import useActiveSection from "./sections/useActiveSection";
 
 function App() {
-  const [activeSection, setActiveSection] = useState(sectionIds[0]);
-
-  useEffect(() => {
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSection = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((entryA, entryB) => entryB.intersectionRatio - entryA.intersectionRatio)[0];
-
-        if (visibleSection?.target?.id) {
-          setActiveSection(visibleSection.target.id);
-        }
-      },
-      {
-        rootMargin: "-35% 0px -45% 0px",
-        threshold: [0.2, 0.4, 0.65],
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, []);
+  const activeSection = useActiveSection(navItems);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-slate-950 text-slate-100">
@@ -61,7 +33,7 @@ function App() {
       <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 pb-16 pt-24 sm:px-6 lg:px-8 lg:pt-28">
         <Hero hero={hero} />
         <About content={about} />
-        <EngineeringPhilosophy content={philosophy} />
+        <Philosophy content={philosophy} />
         <Projects items={projects} />
         <Skills groups={skills} />
         <Experience content={experience} />
