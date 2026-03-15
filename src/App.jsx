@@ -39,6 +39,15 @@ function App() {
         >
           Skip to content
         </a>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 opacity-[0.05] mix-blend-luminosity"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2074')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
         <motion.div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_30%),radial-gradient(circle_at_top_right,rgba(167,139,250,0.12),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(45,212,191,0.14),transparent_28%)]"
