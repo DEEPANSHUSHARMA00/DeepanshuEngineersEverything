@@ -1,8 +1,8 @@
 const socialLinks = {
   email: {
     label: "Email",
-    href: "mailto:your.actual.email@example.com",
-    meta: "your.actual.email@example.com",
+    href: "sdeepanshu819@gmail.com",
+    meta: "sdeepanshu819@gmail.com",
   },
   linkedin: {
     label: "LinkedIn",
