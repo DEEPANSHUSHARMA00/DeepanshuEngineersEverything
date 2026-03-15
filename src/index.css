@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Consolas", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-950 font-sans text-slate-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-cyan-300/30 text-white;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply relative scroll-mt-28 rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_30px_120px_rgba(2,6,23,0.55)] backdrop-blur-xl sm:p-8 lg:p-10;
+  }
+
+  .section-heading {
+    @apply mb-8 flex flex-col gap-4 lg:mb-10 lg:flex-row lg:items-end lg:justify-between;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.34em] text-cyan-300;
+  }
+
+  .glass-card {
+    @apply rounded-[1.75rem] border border-white/10 bg-slate-900/60 shadow-[0_20px_80px_rgba(15,23,42,0.45)] backdrop-blur-md;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

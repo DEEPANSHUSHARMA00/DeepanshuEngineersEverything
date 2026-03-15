@@ -1,14 +1,19 @@
-﻿# Deepanshu Sharma Portfolio
+# Deepanshu Sharma Portfolio
 
-Static portfolio website for Deepanshu Sharma, focused on backend engineering, distributed systems, and real-time data infrastructure.
+Modern developer portfolio built with React, Vite, and Tailwind CSS.
 
-## Files
+## Stack
 
-- `index.html` - single-page portfolio
-- `styles.css` - site styling and responsive layout
-- `script.js` - reveal-on-scroll interactions
-- `Deepanshu-Sharma-Resume.txt` - downloadable resume text
+- React
+- Vite
+- Tailwind CSS
 
-## Deploy
+## Scripts
 
-This project is ready for GitHub and Vercel static deployment.
+- `npm run dev`
+- `npm run build`
+- `npm run preview`
+
+## Deployment
+
+This project is ready for GitHub-based Vercel deployment.
