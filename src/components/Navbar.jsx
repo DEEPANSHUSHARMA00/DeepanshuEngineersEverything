@@ -54,7 +54,7 @@ function Navbar({ navItems, activeSection }) {
               whileHover={reduceMotion ? undefined : { scale: 1.05, rotate: -4 }}
             >
               DS
-            </motion.span>
+            </m.span>
             <span className="hidden text-sm font-medium tracking-[0.08em] text-slate-300 transition-colors duration-200 group-hover:text-white sm:inline-flex">
               Deepanshu Sharma
             </span>
