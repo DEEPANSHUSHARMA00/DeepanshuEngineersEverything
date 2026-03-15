@@ -23,39 +23,41 @@ export const navItems = [
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
+  { id: "certifications", label: "Certifications" },
   { id: "contact", label: "Contact" },
 ];
 
 export const hero = {
   name: "Deepanshu Sharma",
-  title: "Backend Engineer | Distributed Systems | Event-Driven Architecture",
+  title: "Senior Kafka Developer | Real-Time Data Streaming Engineer | FinTech Systems",
   subtitle:
-    "Designing reliable real-time data infrastructure and scalable backend systems.",
+    "4+ years of experience building high-throughput, event-driven systems for international banking clients using Apache Kafka, Apache Flink, and Java.",
   actions: [
     { href: "#projects", label: "View Projects", variant: "primary" },
     { href: "#contact", label: "Contact", variant: "secondary" },
   ],
-  rotatingTechnologies: ["Kafka", "Spring Boot", "Redis", "Distributed Systems"],
+  rotatingTechnologies: ["Apache Kafka", "Apache Flink", "Java", "Spring Boot"],
 };
 
 export const about = {
   eyebrow: "About",
-  title: "Distributed systems intuition built through hands-on exploration.",
+  title: "Building High-Throughput Streaming Platforms",
   description:
-    "Backend engineering focused on real-time infrastructure, failure behavior, and system internals.",
+    "A Real-Time Data Streaming Engineer with proven experience in designing and operating large-scale streaming pipelines processing over 50 million events per day.",
   paragraphs: [
-    "Deepanshu Sharma is a backend engineer focused on distributed systems and real-time data infrastructure.",
-    "He enjoys exploring how systems behave under scale and failure and frequently builds infrastructure experiments to understand system internals.",
+    "With a strong focus on reliability, latency, and scalability, I specialize in developing event-driven systems for the financial technology sector. My work involves architecting and managing robust data infrastructure for international clients like RAKBANK (UAE) and CIMB Bank (Malaysia).",
+    "I am passionate about the intricacies of distributed messaging and stream processing, ensuring systems are not only powerful but also resilient and observable.",
   ],
   profileLabel: "Developer Profile",
-  profileRole: "Backend Engineer",
-  profileFocus: "Distributed Systems | Real-Time Data Infrastructure",
+  profileRole: "Real-Time Data Streaming Engineer",
+  profileFocus: "Apache Kafka | Apache Flink | FinTech",
   profileCaption:
-    "Focused on observing how backend systems communicate, degrade, recover, and scale in production-like environments.",
+    "Designing and operating large-scale streaming pipelines with a strong focus on reliability, latency, and scalability.",
   highlights: [
-    "Distributed systems behavior under scale",
-    "Failure analysis and recovery patterns",
-    "Infrastructure experiments and system internals",
+    "Processed 50M+ events/day with sub-50ms latency",
+    "Designed and managed a 30-broker Kafka cluster",
+    "Built CDC pipelines for RDBMS to event-stream integration",
+    "Developed Flink CEP logic for user pattern analysis",
   ],
 };
 
@@ -130,34 +132,34 @@ export const projects = [
 
 export const skills = [
   {
-    category: "Backend",
+    category: "Data Streaming",
     description:
-      "Core backend development centered around Java services and scalable application design.",
-    items: ["Java", "Spring Boot", "Microservices"],
+      "Core expertise in Kafka and Flink for building high-throughput, real-time data pipelines.",
+    items: ["Apache Kafka", "Apache Flink", "Kafka Connect", "Event-Driven Architecture", "CDC Pipelines"],
     accent:
       "linear-gradient(135deg, rgba(56,189,248,0.72), rgba(59,130,246,0.18), rgba(45,212,191,0.62))",
   },
   {
-    category: "Streaming",
+    category: "Backend Development",
     description:
-      "Event-driven thinking and real-time messaging infrastructure for decoupled systems.",
-    items: ["Apache Kafka", "Event Driven Architecture"],
+      "Building robust, scalable microservices and APIs to support streaming applications.",
+    items: ["Java", "Spring Boot", "REST APIs", "Multithreading", "Async Processing"],
     accent:
       "linear-gradient(135deg, rgba(45,212,191,0.78), rgba(20,184,166,0.2), rgba(125,211,252,0.6))",
   },
   {
-    category: "Infrastructure",
+    category: "Databases & Caching",
     description:
-      "Deployment and runtime fundamentals that support stable backend environments.",
-    items: ["Linux", "Docker", "Redis"],
+      "Experience with various data stores for persistence, caching, and state management in distributed systems.",
+    items: ["MySQL", "MongoDB", "Redis (Cluster, HA)"],
     accent:
       "linear-gradient(135deg, rgba(167,139,250,0.7), rgba(56,189,248,0.16), rgba(96,165,250,0.6))",
   },
   {
-    category: "Cloud",
+    category: "Cloud & DevOps",
     description:
-      "Cloud platform exposure for building and operating backend services in modern environments.",
-    items: ["Google Cloud Platform"],
+      "Containerization, orchestration, and CI/CD for deploying and managing applications at scale.",
+    items: ["Docker", "Kubernetes", "Jenkins CI/CD", "AWS", "GCP"],
     accent:
       "linear-gradient(135deg, rgba(244,114,182,0.62), rgba(59,130,246,0.18), rgba(45,212,191,0.56))",
   },
@@ -165,34 +167,63 @@ export const skills = [
 
 export const experience = {
   eyebrow: "Experience",
-  title: "Backend engineering across interconnected production systems.",
+  title: "4+ Years Building Mission-Critical Streaming Systems",
   description:
-    "Hands-on work in microservices environments supporting real-time data processing and operational reliability.",
-  role: "Backend Engineer",
-  summary:
-    "Working in backend microservices environments supporting real-time data processing systems and service reliability.",
-  activities: [
-    "Debugging production issues across SIT and UAT environments",
-    "Analyzing client-side failures that cannot be reproduced locally",
-    "Supporting backend services interacting with databases and messaging systems",
-    "Maintaining service reliability across microservices architecture",
+    "Professional history designing, building, and operating high-throughput data pipelines for international fintech clients.",
+  roles: [
+    {
+      company: "Optimum InfoSystem (Client: RAKBANK UAE)",
+      role: "Senior Kafka Developer",
+      period: "March 2026 – Present",
+      responsibilities: [
+        "Develop Kafka-based real-time streaming pipelines for financial transaction and customer data processing.",
+        "Design producer and consumer services handling high-volume event streams in banking environments.",
+        "Implement CDC-style ingestion pipelines integrating relational systems with event-driven architectures.",
+        "Monitor Kafka consumer lag, topic health, and streaming pipeline performance to ensure SLA compliance.",
+      ],
+    },
+    {
+      company: "CIMB Bank (Malaysia)",
+      role: "Senior Data Streaming Engineer",
+      period: "May 2024 – Aug 2025",
+      responsibilities: [
+        "Designed and managed a 30-broker Kafka production cluster for the OCTO banking platform.",
+        "Built real-time streaming pipelines using Kafka, Flink, and Redis, processing 50M+ events per day.",
+        "Implemented Flink windowing and CEP logic to analyze user interaction patterns with sub-50ms latency.",
+        "Developed Spring Boot microservices serving CRM and engagement systems for 1M+ daily active users.",
+      ],
+    },
+    {
+      company: "Kloudspot Inc",
+      role: "Data Engineer – Real-Time Streaming",
+      period: "Feb 2022 – Apr 2024",
+      responsibilities: [
+        "Built a real-time analytics platform processing IoT sensor streams using Apache Kafka and Flink.",
+        "Implemented stateful stream enrichment using event-time windows and custom aggregations.",
+        "Optimized MongoDB query latency from 40s to 10s, significantly improving dashboard performance.",
+        "Managed containerized deployments using Docker and Kubernetes.",
+      ],
+    },
   ],
-  exposure: [
-    "Kafka-based data pipelines",
-    "Redis caching layers",
-    "Relational databases",
-    "Distributed backend services",
-    "Linux server environments",
+};
+
+export const certifications = {
+  eyebrow: "Certifications",
+  title: "Confluent Certified Professional",
+  description:
+    "Validated expertise in designing, developing, and operating streaming systems with Apache Kafka and Apache Flink.",
+  items: [
+    "Confluent Certified Administrator for Apache Kafka",
+    "Confluent Certified Kafka Developer",
+    "Confluent Certified Data Streaming Engineer (Apache Flink/FlinkSQL)",
   ],
-  takeaway:
-    "This experience strengthened my ability to diagnose and debug issues across multiple interconnected systems.",
 };
 
 export const contact = {
   eyebrow: "Contact",
-  title: "Let's connect around backend systems and infrastructure.",
+  title: "Get In Touch",
   description:
-    "A clean place to reach out for engineering conversations, collaboration, or infrastructure-focused discussions.",
+    "I am actively seeking new opportunities and am available for immediate joining. Let's connect to discuss roles in real-time data engineering and distributed systems.",
   message:
     "I am always interested in conversations about distributed systems, real-time data infrastructure, and backend engineering.",
   links: [socialLinks.email, socialLinks.linkedin, socialLinks.github],
@@ -200,6 +231,6 @@ export const contact = {
 
 export const footer = {
   name: "Deepanshu Sharma",
-  role: "Backend Engineer | Distributed Systems",
+  role: "Real-Time Data Streaming Engineer",
   links: [socialLinks.linkedin, socialLinks.github, socialLinks.email],
 };
