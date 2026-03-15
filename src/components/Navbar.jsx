@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, domMax, LazyMotion, m, useReducedMotion } from "framer-motion";
 import { motionEase } from "../sections/motion";
 
 function Navbar({ navItems, activeSection }) {
@@ -12,10 +12,21 @@ function Navbar({ navItems, activeSection }) {
       setIsScrolled(window.scrollY > 28);
     };
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const headerSurface = isScrolled || menuOpen;
@@ -23,7 +34,8 @@ function Navbar({ navItems, activeSection }) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <motion.div
+        <LazyMotion features={domMax} strict>
+          <m.div
           layout
           className={`flex items-center justify-between rounded-full px-4 py-3 transition-all duration-300 sm:px-5 ${
             headerSurface
@@ -31,13 +43,13 @@ function Navbar({ navItems, activeSection }) {
               : "border border-transparent bg-transparent shadow-none"
           }`}
           transition={reduceMotion ? undefined : { duration: 0.3, ease: motionEase }}
-        >
-          <motion.a
+          >
+            <m.a
             href="#hero"
             className="group flex items-center gap-3"
             whileHover={reduceMotion ? undefined : { y: -2 }}
-          >
-            <motion.span
+            >
+              <m.span
               className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-cyan-300 via-sky-400 to-teal-300 font-mono text-sm font-bold text-slate-950 shadow-[0_10px_30px_rgba(56,189,248,0.25)]"
               whileHover={reduceMotion ? undefined : { scale: 1.05, rotate: -4 }}
             >
@@ -46,14 +58,14 @@ function Navbar({ navItems, activeSection }) {
             <span className="hidden text-sm font-medium tracking-[0.08em] text-slate-300 transition-colors duration-200 group-hover:text-white sm:inline-flex">
               Deepanshu Sharma
             </span>
-          </motion.a>
+            </m.a>
 
           <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
 
               return (
-                <motion.a
+                <m.a
                   key={item.id}
                   href={`#${item.id}`}
                   aria-current={isActive ? "page" : undefined}
@@ -66,12 +78,12 @@ function Navbar({ navItems, activeSection }) {
                   whileTap={reduceMotion ? undefined : { scale: 0.98 }}
                 >
                   {item.label}
-                </motion.a>
+                </m.a>
               );
             })}
           </nav>
 
-          <motion.button
+            <m.button
             type="button"
             className={`inline-flex h-11 w-11 items-center justify-center rounded-full border text-slate-200 transition-all duration-300 md:hidden ${
               headerSurface
@@ -89,12 +101,12 @@ function Navbar({ navItems, activeSection }) {
               <span className={`h-0.5 w-5 rounded-full bg-current transition ${menuOpen ? "opacity-0" : ""}`} />
               <span className={`h-0.5 w-5 rounded-full bg-current transition ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`} />
             </span>
-          </motion.button>
-        </motion.div>
+            </m.button>
+          </m.div>
 
         <AnimatePresence>
           {menuOpen ? (
-            <motion.nav
+            <m.nav
               id="mobile-navigation"
               initial={reduceMotion ? false : { opacity: 0, y: -12, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -107,7 +119,7 @@ function Navbar({ navItems, activeSection }) {
                 const isActive = activeSection === item.id;
 
                 return (
-                  <motion.a
+                  <m.a
                     key={item.id}
                     href={`#${item.id}`}
                     aria-current={isActive ? "page" : undefined}
@@ -123,12 +135,13 @@ function Navbar({ navItems, activeSection }) {
                     onClick={() => setMenuOpen(false)}
                   >
                     {item.label}
-                  </motion.a>
+                  </m.a>
                 );
               })}
-            </motion.nav>
+            </m.nav>
           ) : null}
         </AnimatePresence>
+        </LazyMotion>
       </div>
     </header>
   );

@@ -1,8 +1,8 @@
 const socialLinks = {
   email: {
     label: "Email",
-    href: "mailto:53019969+DEEPANSHUSHARMA00@users.noreply.github.com",
-    meta: "53019969+DEEPANSHUSHARMA00@users.noreply.github.com",
+    href: "mailto:your.actual.email@example.com",
+    meta: "your.actual.email@example.com",
   },
   linkedin: {
     label: "LinkedIn",
@@ -22,6 +22,7 @@ export const navItems = [
   { id: "philosophy", label: "Philosophy" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ];
 

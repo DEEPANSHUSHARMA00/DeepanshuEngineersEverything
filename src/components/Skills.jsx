@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { domMax, LazyMotion, m, useReducedMotion } from "framer-motion";
 import SectionShell from "../sections/SectionShell";
 import { motionEase } from "../sections/motion";
 
@@ -59,16 +59,17 @@ function Skills({ groups }) {
       title="Core technologies organized around backend, streaming, infrastructure, and cloud."
       description="A modern stack centered on real-time systems, service development, and production-oriented engineering."
     >
-      <div className="grid gap-5 md:grid-cols-2">
-        {groups.map((group) => (
-          <motion.article
+      <LazyMotion features={domMax} strict>
+        <div className="grid gap-5 md:grid-cols-2">
+          {groups.map((group) => (
+            <m.article
             key={group.category}
             className="group relative rounded-[1.8rem] p-px transition duration-300 hover:-translate-y-2 hover:shadow-[0_24px_80px_rgba(2,6,23,0.42)]"
             style={{ backgroundImage: group.accent }}
             whileHover={reduceMotion ? undefined : { y: -10, scale: 1.01 }}
             transition={{ duration: 0.28, ease: motionEase }}
-          >
-            <div className="h-full rounded-[calc(1.8rem-1px)] bg-slate-950/88 p-6 backdrop-blur-xl sm:p-7">
+            >
+              <div className="h-full rounded-[calc(1.8rem-1px)] bg-slate-950/88 p-6 backdrop-blur-xl sm:p-7">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="font-mono text-xs uppercase tracking-[0.34em] text-cyan-300">
@@ -79,33 +80,34 @@ function Skills({ groups }) {
                   </p>
                 </div>
 
-                <motion.span
+                <m.span
                   className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-cyan-300 transition duration-300 group-hover:bg-white/[0.08]"
                   whileHover={reduceMotion ? undefined : { scale: 1.08, rotate: -4 }}
                   transition={{ duration: 0.24, ease: motionEase }}
                 >
                   {iconMap[group.category]}
-                </motion.span>
+                </m.span>
               </div>
 
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {group.items.map((item) => (
-                  <motion.li
+                  <m.li
                     key={item}
                     className="list-none rounded-[1.1rem] border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-slate-200 transition duration-300 group-hover:border-white/15 group-hover:bg-white/[0.06]"
                     whileHover={reduceMotion ? undefined : { y: -3 }}
-                  >
-                    <span className="flex items-center gap-3">
+                    >
+                      <span className="flex items-center gap-3">
                       <span className="h-2 w-2 rounded-full bg-cyan-300" />
                       <span>{item}</span>
-                    </span>
-                  </motion.li>
+                      </span>
+                  </m.li>
                 ))}
               </ul>
             </div>
-          </motion.article>
-        ))}
-      </div>
+            </m.article>
+          ))}
+        </div>
+      </LazyMotion>
     </SectionShell>
   );
 }

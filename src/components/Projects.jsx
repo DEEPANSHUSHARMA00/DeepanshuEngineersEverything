@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, domMax, LazyMotion, m, useReducedMotion } from "framer-motion";
 import SectionShell from "../sections/SectionShell";
 import { motionEase } from "../sections/motion";
 
@@ -26,20 +26,21 @@ function Projects({ items }) {
       title="A project showcase built around infrastructure experiments and backend systems."
       description="Each project focuses on behavior under load, failure, replication, orchestration, or service communication."
     >
-      <div className="grid gap-6 md:grid-cols-2">
-        {items.map((project) => {
-          const projectId = project.title.replace(/\s+/g, "-").toLowerCase();
+      <LazyMotion features={domMax} strict>
+        <div className="grid gap-6 md:grid-cols-2">
+          {items.map((project) => {
+            const projectId = project.title.replace(/\s+/g, "-").toLowerCase();
 
-          return (
-            <motion.article
+            return (
+              <m.article
               key={project.title}
               aria-labelledby={`${projectId}-title`}
               className="group relative rounded-[1.85rem] p-px transition duration-300 hover:-translate-y-2 hover:shadow-[0_28px_90px_rgba(2,6,23,0.48)]"
               style={{ backgroundImage: project.borderGradient }}
               whileHover={reduceMotion ? undefined : { y: -10, scale: 1.01 }}
               transition={{ duration: 0.28, ease: motionEase }}
-            >
-              <div className="h-full rounded-[calc(1.85rem-1px)] bg-slate-950/90 p-6 backdrop-blur-xl sm:p-7">
+              >
+                <div className="h-full rounded-[calc(1.85rem-1px)] bg-slate-950/90 p-6 backdrop-blur-xl sm:p-7">
                 <div className="flex items-start justify-between gap-4">
                   <div className="max-w-xl">
                     <p className="font-mono text-xs uppercase tracking-[0.34em] text-cyan-300">
@@ -50,7 +51,7 @@ function Projects({ items }) {
                     </h3>
                   </div>
 
-                  <motion.button
+                  <m.button
                     type="button"
                     className="inline-flex shrink-0 items-center rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[0.72rem] font-medium uppercase tracking-[0.24em] text-slate-300 transition hover:bg-white/[0.08] hover:text-white"
                     onClick={() => toggleCard(project.title)}
@@ -61,7 +62,7 @@ function Projects({ items }) {
                     whileTap={reduceMotion ? undefined : { scale: 0.96 }}
                   >
                     {openCards[project.title] ? "Hide" : "Details"}
-                  </motion.button>
+                  </m.button>
                 </div>
 
                 <p className="mt-5 text-base leading-8 text-slate-400 sm:text-lg">{project.description}</p>
@@ -72,20 +73,20 @@ function Projects({ items }) {
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2.5">
                     {project.technologies.map((technology) => (
-                      <motion.span
+                      <m.span
                         key={technology}
                         className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-2 text-sm text-slate-300 transition group-hover:border-white/15 group-hover:bg-white/[0.06]"
                         whileHover={reduceMotion ? undefined : { y: -3 }}
                       >
                         {technology}
-                      </motion.span>
+                      </m.span>
                     ))}
                   </div>
                 </div>
 
                 <AnimatePresence initial={false}>
                   {openCards[project.title] ? (
-                    <motion.div
+                    <m.div
                       key="details"
                       id={`${projectId}-details`}
                       initial={reduceMotion ? false : { height: 0, opacity: 0, marginTop: 0 }}
@@ -93,14 +94,14 @@ function Projects({ items }) {
                       exit={reduceMotion ? undefined : { height: 0, opacity: 0, marginTop: 0 }}
                       transition={{ duration: 0.32, ease: motionEase }}
                       className="overflow-hidden"
-                    >
-                      <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5">
+                      >
+                        <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5">
                         <p className="font-mono text-xs uppercase tracking-[0.34em] text-cyan-300">
                           Expandable Details
                         </p>
                         <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300 sm:text-base">
                           {project.details.map((detail, index) => (
-                            <motion.li
+                            <m.li
                               key={detail}
                               className="flex gap-3"
                               initial={reduceMotion ? false : { opacity: 0, y: 10 }}
@@ -109,18 +110,19 @@ function Projects({ items }) {
                             >
                               <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-300" />
                               <span>{detail}</span>
-                            </motion.li>
+                            </m.li>
                           ))}
                         </ul>
                       </div>
-                    </motion.div>
+                    </m.div>
                   ) : null}
                 </AnimatePresence>
               </div>
-            </motion.article>
-          );
-        })}
-      </div>
+              </m.article>
+            );
+          })}
+        </div>
+      </LazyMotion>
     </SectionShell>
   );
 }
