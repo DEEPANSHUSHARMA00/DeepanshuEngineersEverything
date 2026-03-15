@@ -1,0 +1,60 @@
+Deepanshu Sharma
+Backend Engineer | Distributed Systems | Real-Time Data Infrastructure
+
+Summary
+Backend engineer with strong interest in distributed systems, streaming infrastructure, and large scale backend architectures.
+Focused on understanding how systems communicate, fail, recover, and scale in production environments.
+
+Technical Highlights
+- Apache Kafka
+- Spring Boot
+- Redis
+- Java
+- Linux
+- Distributed Systems
+- Microservices Architecture
+- MySQL
+- Docker
+- Google Cloud Platform
+
+About
+I focus on building reliable distributed systems and real-time data infrastructure. My work and exploration revolve around understanding how large systems behave under scale and failure, from Kafka replication and consumer behavior to service communication in event-driven architectures.
+
+Professional Experience
+Backend Engineer
+- Worked in backend microservices environments supporting real-time data processing systems and service reliability
+- Debugged production issues across SIT and UAT environments
+- Analyzed client-side failures that could not be reproduced locally
+- Supported backend services interacting with databases and messaging systems
+- Maintained service reliability in microservices architecture
+
+Projects
+1. Kafka Distributed Cluster Laboratory
+- Built an experimentation environment with 30 virtual machines, 3 ZooKeeper nodes, and 27 Kafka brokers
+- Observed partition leadership behavior, ISR mechanics, broker failures, and recovery behavior
+
+2. Confluent Platform Monitoring Environment
+- Set up monitoring and cluster visibility to study cluster health, consumer lag, throughput, and producer-consumer metrics
+
+3. Redis High Availability Setup
+- Implemented a Redis master-replica setup and explored synchronization, lag, and failover scenarios
+
+4. CI/CD Pipeline Experiment
+- Built a Jenkins-based pipeline to understand automated build and deployment workflows
+
+5. Event-Driven Microservices Experiment
+- Built microservices interacting through Kafka topics to explore ordering, consumer groups, partitioning, and parallel processing
+
+Areas of Exploration
+- Kubernetes orchestration
+- Distributed system reliability
+- Kafka producer and consumer internals
+- Cloud-native infrastructure
+- Large scale system design
+
+Links
+LinkedIn: https://www.linkedin.com/in/deepanshu-sharma-53205a174
+GitHub: https://github.com/DEEPANSHUSHARMA00
+
+Note
+Add your preferred email address before sharing this resume publicly.
