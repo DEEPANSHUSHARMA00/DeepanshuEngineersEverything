@@ -25,7 +25,7 @@ import {
 } from "./assets/portfolioContent";
 import { pageTransition } from "./sections/motion";
 import useActiveSection from "./sections/useActiveSection";
-import bgVideo from "./assets/network-nodes.mp4";
+import bgVideo from "./assets/Futuristic_Data_Stream_Background_Video.mp4";
 
 function App() {
   const activeSection = useActiveSection(navItems);
