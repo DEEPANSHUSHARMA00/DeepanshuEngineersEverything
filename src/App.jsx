@@ -1,6 +1,7 @@
-import { MotionConfig, motion } from "framer-motion";
+import { MotionConfig, motion, useReducedMotion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Clients from "./components/Clients";
 import About from "./components/About";
 import Philosophy from "./components/Philosophy";
 import Projects from "./components/Projects";
@@ -11,6 +12,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import {
   about,
+  clients,
   contact,
   experience,
   footer,
@@ -23,14 +25,16 @@ import {
 } from "./assets/portfolioContent";
 import { pageTransition } from "./sections/motion";
 import useActiveSection from "./sections/useActiveSection";
+import bgVideo from "./assets/network-nodes.mp4";
 
 function App() {
   const activeSection = useActiveSection(navItems);
+  const reduceMotion = useReducedMotion();
 
   return (
     <MotionConfig reducedMotion="user">
       <motion.div
-        className="relative min-h-screen overflow-x-hidden bg-slate-950 text-slate-100"
+        className="relative min-h-screen text-slate-100"
         initial="initial"
         animate="animate"
         variants={pageTransition}
@@ -41,15 +45,19 @@ function App() {
         >
           Skip to content
         </a>
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-0 opacity-[0.05] mix-blend-luminosity"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2074')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+        {reduceMotion ? null : (
+          <video
+            aria-hidden="true"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="pointer-events-none fixed inset-0 h-full w-full object-cover opacity-[0.08] mix-blend-screen"
+          >
+            <source src={bgVideo} type="video/mp4" />
+          </video>
+        )}
         <motion.div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_30%),radial-gradient(circle_at_top_right,rgba(167,139,250,0.12),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(45,212,191,0.14),transparent_28%)]"
@@ -78,6 +86,7 @@ function App() {
           transition={{ duration: 0.65, delay: 0.1 }}
         >
           <Hero hero={hero} />
+          <Clients content={clients} />
           <About content={about} />
           <Philosophy content={philosophy} />
           <Projects items={projects} />

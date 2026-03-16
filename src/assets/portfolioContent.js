@@ -39,6 +39,16 @@ export const hero = {
   rotatingTechnologies: ["Apache Kafka", "Apache Flink", "Java", "Spring Boot"],
 };
 
+export const clients = {
+  eyebrow: "Systems Built & Maintained For",
+  logos: [
+    { name: "RAKBANK", domain: "rakbank.ae" },
+    { name: "CIMB Bank", domain: "cimb.com" },
+    { name: "Kloudspot", domain: "kloudspot.com" },
+    { name: "Optimum", domain: "optimuminfosystem.com" },
+  ],
+};
+
 export const about = {
   eyebrow: "About",
   title: "Building High-Throughput Streaming Platforms",

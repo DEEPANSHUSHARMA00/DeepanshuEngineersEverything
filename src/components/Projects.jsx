@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, domMax, LazyMotion, m, useReducedMotion } from "framer-motion";
 import SectionShell from "../sections/SectionShell";
 import { motionEase } from "../sections/motion";
+import TechnologyBadge from "./TechnologyBadge";
 
 function Projects({ items }) {
   const [openCards, setOpenCards] = useState(() =>
@@ -73,13 +74,15 @@ function Projects({ items }) {
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2.5">
                     {project.technologies.map((technology) => (
-                      <m.span
+                      <m.div
                         key={technology}
-                        className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-2 text-sm text-slate-300 transition group-hover:border-white/15 group-hover:bg-white/[0.06]"
                         whileHover={reduceMotion ? undefined : { y: -3 }}
                       >
-                        {technology}
-                      </m.span>
+                        <TechnologyBadge
+                          label={technology}
+                          className="group-hover:border-white/15 group-hover:bg-white/[0.06]"
+                        />
+                      </m.div>
                     ))}
                   </div>
                 </div>

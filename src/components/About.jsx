@@ -1,4 +1,4 @@
-import profilePlaceholder from "../assets/profile-placeholder.svg";
+import profilePhoto from "../../Resume_pic.jpg";
 import Reveal from "../sections/Reveal";
 import SectionShell from "../sections/SectionShell";
 
@@ -41,14 +41,13 @@ function About({ content }) {
           <div className="px-6 sm:px-7">
             <div className="overflow-hidden rounded-[1.7rem] border border-white/10 bg-slate-950/70">
               <img
-                src={profilePlaceholder}
-                alt=""
-                aria-hidden="true"
+                src={profilePhoto}
+                alt="Portrait of Deepanshu Sharma"
                 loading="lazy"
                 decoding="async"
-                width="720"
-                height="880"
-                className="h-full w-full object-cover"
+                width="1280"
+                height="1280"
+                className="h-full w-full object-cover object-top"
               />
             </div>
           </div>

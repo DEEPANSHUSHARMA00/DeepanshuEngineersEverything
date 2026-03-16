@@ -1,6 +1,7 @@
 import { domMax, LazyMotion, m, useReducedMotion } from "framer-motion";
 import SectionShell from "../sections/SectionShell";
 import { motionEase } from "../sections/motion";
+import TechnologyBadge from "./TechnologyBadge";
 
 const iconMap = {
   Backend: (
@@ -93,13 +94,13 @@ function Skills({ groups }) {
                 {group.items.map((item) => (
                   <m.li
                     key={item}
-                    className="list-none rounded-[1.1rem] border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-slate-200 transition duration-300 group-hover:border-white/15 group-hover:bg-white/[0.06]"
+                    className="list-none"
                     whileHover={reduceMotion ? undefined : { y: -3 }}
-                    >
-                      <span className="flex items-center gap-3">
-                      <span className="h-2 w-2 rounded-full bg-cyan-300" />
-                      <span>{item}</span>
-                      </span>
+                  >
+                    <TechnologyBadge
+                      label={item}
+                      className="w-full justify-start rounded-[1.1rem] px-4 py-3 text-slate-200 group-hover:border-white/15 group-hover:bg-white/[0.06]"
+                    />
                   </m.li>
                 ))}
               </ul>
