@@ -25,7 +25,7 @@ import {
 } from "./assets/portfolioContent";
 import { pageTransition } from "./sections/motion";
 import useActiveSection from "./sections/useActiveSection";
-import bgVideo from "./assets/Futuristic_Data_Stream_Background_Video.mp4";
+import bgVideo from "./assets/Futuristic_Grid_Background_Video_Generation.mp4";
 
 function App() {
   const activeSection = useActiveSection(navItems);
@@ -53,7 +53,7 @@ function App() {
             muted
             playsInline
             preload="metadata"
-            className="pointer-events-none fixed inset-0 h-full w-full object-cover opacity-[0.08] mix-blend-screen"
+            className="pointer-events-none fixed inset-0 h-full w-full object-cover opacity-[0.15] mix-blend-screen scale-110"
           >
             <source src={bgVideo} type="video/mp4" />
           </video>
