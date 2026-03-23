@@ -100,6 +100,7 @@ function App() {
         <Footer content={footer} />
         <Analytics />
       </motion.div>
+      <Analytics />
     </MotionConfig>
   );
 }
