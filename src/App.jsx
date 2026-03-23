@@ -1,4 +1,5 @@
 import { MotionConfig, motion, useReducedMotion } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Clients from "./components/Clients";
@@ -98,6 +99,7 @@ function App() {
 
         <Footer content={footer} />
       </motion.div>
+      <Analytics />
     </MotionConfig>
   );
 }
