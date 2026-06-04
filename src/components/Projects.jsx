@@ -24,8 +24,8 @@ function Projects({ items }) {
     <SectionShell
       id="projects"
       eyebrow="Projects"
-      title="A project showcase built around infrastructure experiments and backend systems."
-      description="Each project focuses on behavior under load, failure, replication, orchestration, or service communication."
+      title="Streaming delivery, architecture work, and infrastructure experiments."
+      description="A mix of client-facing Kafka/Flink delivery and hands-on labs for understanding behavior under load, replay, failure, and orchestration."
     >
       <LazyMotion features={domMax} strict>
         <div className="grid gap-6 md:grid-cols-2">

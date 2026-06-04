@@ -1,7 +1,7 @@
 const socialLinks = {
   email: {
     label: "Email",
-    href: "sdeepanshu819@gmail.com",
+    href: "mailto:sdeepanshu819@gmail.com",
     meta: "sdeepanshu819@gmail.com",
   },
   linkedin: {
@@ -29,19 +29,21 @@ export const navItems = [
 
 export const hero = {
   name: "Deepanshu Sharma",
-  title: "Senior Kafka Developer | Real-Time Data Streaming Engineer | FinTech Systems",
+  title: "Apache Flink Developer | Confluent Kafka Engineer | Real-Time Streaming Systems",
   subtitle:
-    "4+ years of experience building high-throughput, event-driven systems for international banking clients using Apache Kafka, Apache Flink, and Java.",
+    "4.5 years of experience building real-time, event-driven systems across banking, insurance, and IoT analytics using Confluent Kafka, Apache Flink, Kafka Connect, and Java.",
   actions: [
     { href: "#projects", label: "View Projects", variant: "primary" },
     { href: "#contact", label: "Contact", variant: "secondary" },
   ],
-  rotatingTechnologies: ["Apache Kafka", "Apache Flink", "Java", "Spring Boot"],
+  rotatingTechnologies: ["Confluent Kafka", "Apache Flink", "Kafka Connect", "CDC Pipelines", "OpenSearch"],
 };
 
 export const clients = {
   eyebrow: "Systems Built & Maintained For",
   logos: [
+    { name: "Allianz Technology", domain: "allianz.com" },
+    { name: "SoftwareOne", domain: "softwareone.com" },
     { name: "RAKBANK", domain: "rakbank.ae" },
     { name: "CIMB Bank", domain: "cimb.com" },
     { name: "Kloudspot", domain: "kloudspot.com" },
@@ -51,23 +53,23 @@ export const clients = {
 
 export const about = {
   eyebrow: "About",
-  title: "Building High-Throughput Streaming Platforms",
+  title: "Building Correct, Replayable Streaming Platforms",
   description:
-    "A Real-Time Data Streaming Engineer with proven experience in designing and operating large-scale streaming pipelines processing over 50 million events per day.",
+    "Confluent Certified Kafka and Apache Flink focused developer with hands-on depth in CDC, stateful stream processing, and low-latency read models.",
   paragraphs: [
-    "With a strong focus on reliability, latency, and scalability, I specialize in developing event-driven systems for the financial technology sector. My work involves architecting and managing robust data infrastructure for international clients like RAKBANK (UAE) and CIMB Bank (Malaysia).",
-    "I am passionate about the intricacies of distributed messaging and stream processing, ensuring systems are not only powerful but also resilient and observable.",
+    "I build event-driven systems where correctness comes first: partition keys, ordering, event-time behavior, replayability, idempotent sinks, and schema evolution are part of the design before transformations are written.",
+    "My recent work spans Allianz Technology, RAKBANK UAE, CIMB Bank Malaysia, and Kloudspot, covering CDC ingestion, Kafka Connect operations, Flink stateful joins, Redis-backed services, OpenSearch materialization, and production troubleshooting.",
   ],
   profileLabel: "Developer Profile",
-  profileRole: "Real-Time Data Streaming Engineer",
-  profileFocus: "Apache Kafka | Apache Flink | FinTech",
+  profileRole: "Kafka & Flink Streaming Engineer",
+  profileFocus: "Confluent Kafka | Apache Flink | CDC | OpenSearch",
   profileCaption:
-    "Designing and operating large-scale streaming pipelines with a strong focus on reliability, latency, and scalability.",
+    "Developer-first streaming engineer with Kafka administration depth as an advantage, focused on reliable materialized views and production-ready data movement.",
   highlights: [
-    "Processed 50M+ events/day with sub-50ms latency",
-    "Designed and managed a 30-broker Kafka cluster",
+    "Designed RDS/Aurora PostgreSQL CDC to Kafka, Flink, and OpenSearch architecture",
+    "Processed 50M+ banking events/day with sub-50ms latency targets",
     "Built CDC pipelines for RDBMS to event-stream integration",
-    "Developed Flink CEP logic for user pattern analysis",
+    "Handled Kafka Connect plugins, worker behavior, DNS, lag, and replay troubleshooting",
   ],
 };
 
@@ -86,6 +88,48 @@ export const philosophy = {
 };
 
 export const projects = [
+  {
+    title: "Allianz R2 Policy Summary Search",
+    description:
+      "Designed a real-time policy denormalization pipeline that replaces slow query-time joins with a streaming materialized search model.",
+    technologies: ["PostgreSQL CDC", "Kafka Connect", "Confluent Kafka", "AWS Managed Flink", "OpenSearch"],
+    details: [
+      "Validated an architecture from RDS/Aurora PostgreSQL CDC through Kafka Connect on AWS EKS, Allianz EBS Confluent Kafka, AWS Managed Apache Flink, and Amazon OpenSearch.",
+      "Modeled CONTRACT_ID as the universal key for Kafka partitioning, Flink keyed state, entity reconstruction, and OpenSearch document identity.",
+      "Defined clean boundaries where Debezium/Kafka Connect capture changes while Flink owns joins, late events, enrichment, incremental recomputation, and snapshot emission.",
+      "Prepared stakeholder-facing HLD material covering replay/rebuild strategy, source database load risk, OpenSearch refresh paths, and operational ownership.",
+    ],
+    borderGradient:
+      "linear-gradient(135deg, rgba(14,165,233,0.8), rgba(45,212,191,0.2), rgba(129,140,248,0.65))",
+  },
+  {
+    title: "CIMB OCTO Banking Streaming Platform",
+    description:
+      "Built and supported Kafka, Flink, Redis, SQL, and Spring Boot streaming services for banking engagement, CRM, dashboards, and analytics workflows.",
+    technologies: ["Confluent Kafka", "Apache Flink", "Redis", "Spring Boot", "SQL"],
+    details: [
+      "Worked across topic design, partition planning, consumer group behavior, producer/consumer tuning, retention planning, ACLs, and operational troubleshooting.",
+      "Implemented Flink event-time windows, stateful enrichment, and behavior pattern detection for high-volume banking engagement use cases.",
+      "Supported prior resume targets of 50M+ events/day and sub-50ms latency in mission-critical banking environments.",
+      "Developed Spring Boot REST APIs and SQL-backed services for CRM, campaign analytics, dashboards, and real-time user engagement systems.",
+    ],
+    borderGradient:
+      "linear-gradient(135deg, rgba(239,68,68,0.7), rgba(56,189,248,0.18), rgba(45,212,191,0.6))",
+  },
+  {
+    title: "Kloudspot IoT Analytics Platform",
+    description:
+      "Delivered real-time analytics pipelines for WiFi, Bluetooth, and camera-derived IoT sensor events consumed by operational dashboards.",
+    technologies: ["Apache Kafka", "Apache Flink", "MongoDB", "Redis", "Kubernetes"],
+    details: [
+      "Built Flink jobs for event-time windows, stateful enrichment, aggregations, and near-real-time business metrics.",
+      "Developed Java and Spring Boot microservices for analytics products used by hospitality clients in Japan and Dubai.",
+      "Optimized MongoDB aggregation and indexing paths, reducing query latency from approximately 40 seconds to 10 seconds.",
+      "Managed Kafka and Redis components in Docker/Kubernetes environments and supported Linux-based production troubleshooting.",
+    ],
+    borderGradient:
+      "linear-gradient(135deg, rgba(34,197,94,0.72), rgba(56,189,248,0.18), rgba(167,139,250,0.58))",
+  },
   {
     title: "Kafka Distributed Cluster Laboratory",
     description:
@@ -142,34 +186,34 @@ export const projects = [
 
 export const skills = [
   {
-    category: "Data Streaming",
+    category: "Streaming Engineering",
     description:
-      "Core expertise in Kafka and Flink for building high-throughput, real-time data pipelines.",
-    items: ["Apache Kafka", "Apache Flink", "Kafka Connect", "Event-Driven Architecture", "CDC Pipelines"],
+      "Kafka and Flink depth for high-throughput event movement, stateful processing, and production troubleshooting.",
+    items: ["Confluent Kafka", "Apache Flink", "Flink SQL", "Kafka Connect", "Event-Time Processing", "Stateful Enrichment"],
     accent:
       "linear-gradient(135deg, rgba(56,189,248,0.72), rgba(59,130,246,0.18), rgba(45,212,191,0.62))",
   },
   {
-    category: "Backend Development",
+    category: "CDC & Search Models",
     description:
-      "Building robust, scalable microservices and APIs to support streaming applications.",
-    items: ["Java", "Spring Boot", "REST APIs", "Multithreading", "Async Processing"],
+      "Reliable change data capture, replayable transformations, and low-latency serving models for operational search.",
+    items: ["Debezium CDC Patterns", "Schema Registry", "Avro/Protobuf Awareness", "OpenSearch", "Replay/Rebuild Strategy"],
     accent:
       "linear-gradient(135deg, rgba(45,212,191,0.78), rgba(20,184,166,0.2), rgba(125,211,252,0.6))",
   },
   {
-    category: "Databases & Caching",
+    category: "Backend & Data Stores",
     description:
-      "Experience with various data stores for persistence, caching, and state management in distributed systems.",
-    items: ["MySQL", "MongoDB", "Redis (Cluster, HA)"],
+      "Java service development and data-store experience around streaming applications and real-time analytics.",
+    items: ["Java", "Spring Boot", "REST APIs", "PostgreSQL", "MySQL", "MongoDB", "Redis"],
     accent:
       "linear-gradient(135deg, rgba(167,139,250,0.7), rgba(56,189,248,0.16), rgba(96,165,250,0.6))",
   },
   {
-    category: "Cloud & DevOps",
+    category: "Cloud & Operations",
     description:
-      "Containerization, orchestration, and CI/CD for deploying and managing applications at scale.",
-    items: ["Docker", "Kubernetes", "Jenkins CI/CD", "AWS", "GCP"],
+      "Cloud, container, and operational skills for running streaming workloads in enterprise environments.",
+    items: ["AWS EC2/EKS/RDS/S3", "AWS Managed Apache Flink", "Docker", "Kubernetes", "Jenkins CI/CD", "Linux"],
     accent:
       "linear-gradient(135deg, rgba(244,114,182,0.62), rgba(59,130,246,0.18), rgba(45,212,191,0.56))",
   },
@@ -177,30 +221,42 @@ export const skills = [
 
 export const experience = {
   eyebrow: "Experience",
-  title: "4+ Years Building Mission-Critical Streaming Systems",
+  title: "4.5 Years Building Mission-Critical Streaming Systems",
   description:
-    "Professional history designing, building, and operating high-throughput data pipelines for international fintech clients.",
+    "Professional history designing, building, and operating high-throughput streaming systems across banking, insurance, and IoT analytics.",
   roles: [
     {
-      company: "Optimum InfoSystem (Client: RAKBANK UAE)",
-      role: "Senior Kafka Developer",
-      period: "March 2026 – Present",
+      company: "SoftwareOne / Allianz Technology",
+      role: "Kafka & Flink Streaming Consultant",
+      period: "Apr 2026 – Present",
       responsibilities: [
-        "Develop Kafka-based real-time streaming pipelines for financial transaction and customer data processing.",
-        "Design producer and consumer services handling high-volume event streams in banking environments.",
-        "Implement CDC-style ingestion pipelines integrating relational systems with event-driven architectures.",
-        "Monitor Kafka consumer lag, topic health, and streaming pipeline performance to ensure SLA compliance.",
+        "Working on Allianz R2 Summary Search modernization, replacing slow query-time relational joins with a real-time streaming materialization pipeline.",
+        "Designed and validated the RDS/Aurora PostgreSQL CDC to Kafka Connect, Confluent Kafka, AWS Managed Apache Flink, and Amazon OpenSearch architecture.",
+        "Modeled CONTRACT_ID as the universal key for Kafka partitioning, Flink keyed state, entity reconstruction, and OpenSearch document identity.",
+        "Defined component boundaries where Kafka Connect handles CDC capture while Flink owns stateful joins, enrichment, late events, recomputation, and snapshot emission.",
+        "Created HLD material for stakeholders covering managed Flink trade-offs, replay/rebuild strategy, source database load risk, and operational ownership.",
+      ],
+    },
+    {
+      company: "Optimum InfoSystem (Client: RAKBANK UAE)",
+      role: "Senior Kafka & Flink Developer",
+      period: "Mar 2026 – Present",
+      responsibilities: [
+        "Contributing to banking-grade Kafka/Flink initiatives focused on event-driven data movement, CDC patterns, and Confluent ecosystem implementation.",
+        "Worked with Confluent Kafka/Kafka Connect setup, connector plugin installation, distributed worker behavior, network/DNS troubleshooting, and integration validation.",
+        "Prepared Kafka Connect and CDC proof-of-concept flows, including connector runtime checks, topic/config validation, and production-readiness considerations.",
+        "Collaborated on demo and pre-sales technical preparation, translating banking requirements into Kafka/Flink pipeline steps and success criteria.",
       ],
     },
     {
       company: "CIMB Bank (Malaysia)",
-      role: "Senior Data Streaming Engineer",
+      role: "Senior Data Streaming Engineer / Kafka Specialist",
       period: "May 2024 – Aug 2025",
       responsibilities: [
-        "Designed and managed a 30-broker Kafka production cluster for the OCTO banking platform.",
-        "Built real-time streaming pipelines using Kafka, Flink, and Redis, processing 50M+ events per day.",
-        "Implemented Flink windowing and CEP logic to analyze user interaction patterns with sub-50ms latency.",
-        "Developed Spring Boot microservices serving CRM and engagement systems for 1M+ daily active users.",
+        "Built and supported high-throughput streaming pipelines using Confluent Kafka, Apache Flink, Redis, SQL, and Spring Boot for the OCTO banking ecosystem.",
+        "Worked with a large multi-broker Confluent Kafka setup covering topic design, partition planning, consumer groups, retention, ACLs, and operational troubleshooting.",
+        "Implemented Flink event-time windows, stateful enrichment, and behavior/event pattern detection for engagement and analytics use cases.",
+        "Improved stream efficiency through partitioning/parallelism tuning and collaborated across engineering, infra, and business teams for production incident analysis.",
       ],
     },
     {
@@ -208,10 +264,11 @@ export const experience = {
       role: "Data Engineer – Real-Time Streaming",
       period: "Feb 2022 – Apr 2024",
       responsibilities: [
-        "Built a real-time analytics platform processing IoT sensor streams using Apache Kafka and Flink.",
-        "Implemented stateful stream enrichment using event-time windows and custom aggregations.",
-        "Optimized MongoDB query latency from 40s to 10s, significantly improving dashboard performance.",
-        "Managed containerized deployments using Docker and Kubernetes.",
+        "Built real-time analytics pipelines using Apache Kafka and Apache Flink for WiFi, Bluetooth, and camera-derived IoT sensor streams.",
+        "Developed Flink jobs for event-time windows, stateful enrichment, aggregations, and near-real-time business metrics consumed by dashboards.",
+        "Built Java/Spring Boot microservices and REST APIs for analytics products used by hospitality clients in Japan and Dubai.",
+        "Optimized MongoDB aggregation and indexing paths, reducing query latency from approximately 40 seconds to 10 seconds.",
+        "Delivered a P2P video conferencing backend module that reduced dependency on third-party licensing for a product capability.",
       ],
     },
   ],
@@ -219,13 +276,13 @@ export const experience = {
 
 export const certifications = {
   eyebrow: "Certifications",
-  title: "Confluent Certified Professional",
+  title: "Confluent Certified Kafka Foundation",
   description:
-    "Validated expertise in designing, developing, and operating streaming systems with Apache Kafka and Apache Flink.",
+    "Certification and delivery depth aligned with Apache Flink, Confluent Kafka, CDC, and event-driven architecture roles.",
   items: [
     "Confluent Certified Administrator for Apache Kafka",
-    "Confluent Certified Kafka Developer",
-    "Confluent Certified Data Streaming Engineer (Apache Flink/FlinkSQL)",
+    "Apache Flink and Flink SQL production delivery experience",
+    "Kafka Connect, Debezium CDC, and Confluent ecosystem implementation depth",
   ],
 };
 
@@ -233,14 +290,14 @@ export const contact = {
   eyebrow: "Contact",
   title: "Get In Touch",
   description:
-    "I am actively seeking new opportunities and am available for immediate joining. Let's connect to discuss roles in real-time data engineering and distributed systems.",
+    "Open to Apache Flink, Confluent Kafka, CDC, and real-time data engineering conversations.",
   message:
-    "I am always interested in conversations about distributed systems, real-time data infrastructure, and backend engineering.",
+    "I am always interested in conversations about streaming platforms, CDC pipelines, Flink stateful processing, and backend systems that need to behave correctly under production pressure.",
   links: [socialLinks.email, socialLinks.linkedin, socialLinks.github],
 };
 
 export const footer = {
   name: "Deepanshu Sharma",
-  role: "Real-Time Data Streaming Engineer",
+  role: "Apache Flink Developer | Confluent Kafka Engineer",
   links: [socialLinks.linkedin, socialLinks.github, socialLinks.email],
 };

@@ -10,13 +10,13 @@
     Deepanshu Sharma
   </text>
   <text x="584" y="320" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">
-    Backend Engineer | Distributed Systems
+    Kafka & Flink Streaming Engineer
   </text>
   <text x="584" y="388" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="24">
-    Real-time data infrastructure, Kafka, Spring Boot,
+    CDC pipelines, Confluent Kafka, Apache Flink,
   </text>
   <text x="584" y="424" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="24">
-    Redis, event-driven architecture, and scalable systems.
+    OpenSearch materialization, and backend systems.
   </text>
   <defs>
     <linearGradient id="paint0_linear" x1="84" y1="40" x2="1090" y2="592" gradientUnits="userSpaceOnUse">
