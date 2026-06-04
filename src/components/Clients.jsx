@@ -14,7 +14,7 @@ function Clients({ content }) {
         {content.eyebrow}
       </p>
       <LazyMotion features={domMax} strict>
-        <div className="grid w-full gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {content.logos.map((logo, index) => (
             (() => {
               const logoDetails = clientLogoMap[logo.name];

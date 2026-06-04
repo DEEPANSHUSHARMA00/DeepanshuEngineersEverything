@@ -14,16 +14,21 @@ const socialLinks = {
     href: "https://github.com/DEEPANSHUSHARMA00",
     meta: "Code and experiments",
   },
+  resume: {
+    label: "Resume",
+    href: "/Deepanshu-Sharma-Resume.txt",
+    meta: "Download latest resume",
+    download: true,
+  },
 };
 
 export const navItems = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
-  { id: "philosophy", label: "Philosophy" },
+  { id: "architecture", label: "Architecture" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
-  { id: "certifications", label: "Certifications" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -33,10 +38,37 @@ export const hero = {
   subtitle:
     "4.5 years of experience building real-time, event-driven systems across banking, insurance, and IoT analytics using Confluent Kafka, Apache Flink, Kafka Connect, and Java.",
   actions: [
-    { href: "#projects", label: "View Projects", variant: "primary" },
+    { href: "#architecture", label: "View Architecture", variant: "primary" },
+    { href: "/Deepanshu-Sharma-Resume.txt", label: "Download Resume", variant: "secondary", download: true },
     { href: "#contact", label: "Contact", variant: "secondary" },
   ],
   rotatingTechnologies: ["Confluent Kafka", "Apache Flink", "Kafka Connect", "CDC Pipelines", "OpenSearch"],
+};
+
+export const metrics = {
+  label: "Streaming impact",
+  items: [
+    {
+      value: "4.5",
+      label: "Years",
+      detail: "Banking, insurance, and IoT streaming delivery",
+    },
+    {
+      value: "50M+",
+      label: "Events/day",
+      detail: "Prior high-volume banking stream target",
+    },
+    {
+      value: "40s -> 10s",
+      label: "Query latency",
+      detail: "MongoDB aggregation and indexing optimization",
+    },
+    {
+      value: "4",
+      label: "Domains",
+      detail: "Banking, insurance, IoT analytics, and hospitality",
+    },
+  ],
 };
 
 export const clients = {
@@ -87,6 +119,51 @@ export const philosophy = {
   signature: "Curiosity, failure analysis, and systems thinking.",
 };
 
+export const architecture = {
+  eyebrow: "Streaming Architecture",
+  title: "From database change to searchable business document.",
+  description:
+    "A practical architecture pattern from the latest resume work: capture relational changes, move them through Kafka, reconstruct state in Flink, and serve a low-latency read model.",
+  stages: [
+    {
+      label: "PostgreSQL CDC",
+      eyebrow: "Source",
+      description: "RDS/Aurora tables emit contract and policy changes without pushing expensive joins into query time.",
+      technologies: ["RDS/Aurora", "PostgreSQL", "Debezium"],
+    },
+    {
+      label: "Kafka Connect",
+      eyebrow: "Capture",
+      description: "Distributed workers ingest CDC events, handle connector runtime checks, and normalize simple source changes.",
+      technologies: ["Kafka Connect", "SMTs", "DLQ"],
+    },
+    {
+      label: "Confluent Kafka",
+      eyebrow: "Transport",
+      description: "Topics are keyed around CONTRACT_ID for ordering, partitioning, replay, and entity reconstruction.",
+      technologies: ["Topics", "Partitions", "Schema Registry"],
+    },
+    {
+      label: "Apache Flink",
+      eyebrow: "State",
+      description: "Keyed state handles joins, late events, enrichment, incremental recomputation, and snapshot emission.",
+      technologies: ["Keyed State", "Event Time", "Flink SQL"],
+    },
+    {
+      label: "OpenSearch",
+      eyebrow: "Serve",
+      description: "One document per CONTRACT_ID gives search users a fast denormalized view that can be rebuilt by replay.",
+      technologies: ["Document ID", "Replay", "Read Model"],
+    },
+  ],
+  principles: [
+    "Kafka Connect captures changes; Flink owns stateful reconstruction.",
+    "Keys and ordering are design decisions, not implementation details.",
+    "Search indexes should be rebuildable from durable event streams.",
+    "Operational plans include lag, backpressure, poison messages, and replay windows.",
+  ],
+};
+
 export const projects = [
   {
     title: "Allianz R2 Policy Summary Search",
@@ -99,6 +176,15 @@ export const projects = [
       "Defined clean boundaries where Debezium/Kafka Connect capture changes while Flink owns joins, late events, enrichment, incremental recomputation, and snapshot emission.",
       "Prepared stakeholder-facing HLD material covering replay/rebuild strategy, source database load risk, OpenSearch refresh paths, and operational ownership.",
     ],
+    caseStudy: {
+      problem: "Policy summary search depended on slow relational joins at query time.",
+      architecture: "RDS/Aurora PostgreSQL CDC -> Kafka Connect on AWS EKS -> Confluent Kafka -> AWS Managed Apache Flink -> Amazon OpenSearch.",
+      decisions: [
+        "Use CONTRACT_ID as the universal key across Kafka, Flink state, and OpenSearch documents.",
+        "Keep CDC capture in Kafka Connect and move multi-table reconstruction into Flink.",
+      ],
+      impact: "Creates a replayable materialized search model with clearer ownership, rebuild strategy, and lower query-time pressure.",
+    },
     borderGradient:
       "linear-gradient(135deg, rgba(14,165,233,0.8), rgba(45,212,191,0.2), rgba(129,140,248,0.65))",
   },
@@ -113,6 +199,15 @@ export const projects = [
       "Supported prior resume targets of 50M+ events/day and sub-50ms latency in mission-critical banking environments.",
       "Developed Spring Boot REST APIs and SQL-backed services for CRM, campaign analytics, dashboards, and real-time user engagement systems.",
     ],
+    caseStudy: {
+      problem: "Banking engagement and dashboard systems needed high-throughput real-time data movement.",
+      architecture: "Confluent Kafka topics, Flink event processing, Redis-backed low-latency access, SQL services, and Spring Boot APIs.",
+      decisions: [
+        "Tune partitioning and parallelism around stream volume and consumer behavior.",
+        "Use event-time windows and stateful enrichment for behavior and engagement analytics.",
+      ],
+      impact: "Supported high-volume banking use cases with prior resume targets of 50M+ events/day and sub-50ms latency.",
+    },
     borderGradient:
       "linear-gradient(135deg, rgba(239,68,68,0.7), rgba(56,189,248,0.18), rgba(45,212,191,0.6))",
   },
@@ -127,6 +222,15 @@ export const projects = [
       "Optimized MongoDB aggregation and indexing paths, reducing query latency from approximately 40 seconds to 10 seconds.",
       "Managed Kafka and Redis components in Docker/Kubernetes environments and supported Linux-based production troubleshooting.",
     ],
+    caseStudy: {
+      problem: "IoT dashboards needed near-real-time metrics from WiFi, Bluetooth, and camera-derived event streams.",
+      architecture: "Kafka ingestion, Flink aggregation/enrichment, Redis-backed workloads, MongoDB analytics paths, and Spring Boot APIs.",
+      decisions: [
+        "Use Flink event-time processing for time-sensitive sensor analytics.",
+        "Optimize MongoDB aggregation and indexes where dashboards depended on historical reads.",
+      ],
+      impact: "Reduced analytics query latency from approximately 40 seconds to 10 seconds and improved dashboard responsiveness.",
+    },
     borderGradient:
       "linear-gradient(135deg, rgba(34,197,94,0.72), rgba(56,189,248,0.18), rgba(167,139,250,0.58))",
   },
@@ -219,6 +323,31 @@ export const skills = [
   },
 ];
 
+export const streamingDepth = {
+  eyebrow: "Streaming Engineering Depth",
+  title: "The details that decide whether a stream survives production.",
+  description:
+    "These are the recurring engineering concerns I design around before a Kafka or Flink pipeline becomes business-critical.",
+  groups: [
+    {
+      title: "Correctness",
+      items: ["Partition keys", "Ordering guarantees", "Event-time behavior", "Idempotent sinks", "Schema evolution"],
+    },
+    {
+      title: "Kafka Internals",
+      items: ["Consumer groups", "Offset commits", "Retention and compaction", "ISR and replication", "Producer tuning"],
+    },
+    {
+      title: "Flink Ownership",
+      items: ["Keyed state", "Late events", "Stateful joins", "Incremental recomputation", "Snapshot emission"],
+    },
+    {
+      title: "Operations",
+      items: ["Connector failures", "DNS/network issues", "Consumer lag", "Backpressure", "DLQ and replay paths"],
+    },
+  ],
+};
+
 export const experience = {
   eyebrow: "Experience",
   title: "4.5 Years Building Mission-Critical Streaming Systems",
@@ -286,6 +415,53 @@ export const certifications = {
   ],
 };
 
+export const roleFit = {
+  eyebrow: "Role Fit",
+  title: "Best fit for developer-first streaming roles.",
+  description:
+    "The portfolio is intentionally positioned for hands-on engineering roles where Kafka administration depth strengthens Flink and CDC delivery.",
+  roles: [
+    "Apache Flink Developer",
+    "Confluent Kafka Developer",
+    "Real-Time Data Engineer",
+    "Streaming Platform Developer",
+    "CDC Engineer",
+    "Event-Driven Architecture Engineer",
+  ],
+  strengths: [
+    "Translates fragmented database changes into reliable streaming pipelines.",
+    "Designs materialized read models for search, dashboards, and low-latency user journeys.",
+    "Can explain trade-offs to stakeholders while still debugging connectors, lag, and stateful jobs hands-on.",
+  ],
+};
+
+export const insights = {
+  eyebrow: "Technical Notes",
+  title: "Writing topics that show how I think through streaming systems.",
+  description:
+    "Short engineering notes shaped around real problems from Kafka, Flink, CDC, OpenSearch, and operational debugging.",
+  posts: [
+    {
+      title: "Kafka Connect vs Flink: where CDC capture ends and stateful processing begins",
+      summary:
+        "A practical split of responsibilities for Debezium, SMTs, joins, enrichment, late events, and materialized output.",
+      tags: ["Kafka Connect", "Flink", "CDC"],
+    },
+    {
+      title: "Designing replayable OpenSearch indexes from Kafka and Flink",
+      summary:
+        "How stable document IDs, durable topics, keyed state, and rebuild windows keep search models recoverable.",
+      tags: ["OpenSearch", "Replay", "Read Models"],
+    },
+    {
+      title: "What I check first when a streaming pipeline slows down",
+      summary:
+        "A debugging path through consumer lag, connector failures, DNS issues, backpressure, poison messages, and DLQ behavior.",
+      tags: ["Operations", "Kafka", "Troubleshooting"],
+    },
+  ],
+};
+
 export const contact = {
   eyebrow: "Contact",
   title: "Get In Touch",
@@ -293,7 +469,7 @@ export const contact = {
     "Open to Apache Flink, Confluent Kafka, CDC, and real-time data engineering conversations.",
   message:
     "I am always interested in conversations about streaming platforms, CDC pipelines, Flink stateful processing, and backend systems that need to behave correctly under production pressure.",
-  links: [socialLinks.email, socialLinks.linkedin, socialLinks.github],
+  links: [socialLinks.email, socialLinks.linkedin, socialLinks.github, socialLinks.resume],
 };
 
 export const footer = {

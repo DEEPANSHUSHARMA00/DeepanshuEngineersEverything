@@ -116,6 +116,41 @@ function Projects({ items }) {
                             </m.li>
                           ))}
                         </ul>
+                        {project.caseStudy ? (
+                          <div className="mt-6 grid gap-4 border-t border-white/10 pt-5 md:grid-cols-2">
+                            <div>
+                              <p className="font-mono text-[0.68rem] uppercase tracking-[0.26em] text-slate-500">
+                                Problem
+                              </p>
+                              <p className="mt-2 text-sm leading-7 text-slate-300">{project.caseStudy.problem}</p>
+                            </div>
+                            <div>
+                              <p className="font-mono text-[0.68rem] uppercase tracking-[0.26em] text-slate-500">
+                                Architecture
+                              </p>
+                              <p className="mt-2 text-sm leading-7 text-slate-300">{project.caseStudy.architecture}</p>
+                            </div>
+                            <div>
+                              <p className="font-mono text-[0.68rem] uppercase tracking-[0.26em] text-slate-500">
+                                Key Decisions
+                              </p>
+                              <ul className="mt-2 flex flex-col gap-2 text-sm leading-7 text-slate-300">
+                                {project.caseStudy.decisions.map((decision) => (
+                                  <li key={decision} className="flex gap-2">
+                                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
+                                    <span>{decision}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div>
+                              <p className="font-mono text-[0.68rem] uppercase tracking-[0.26em] text-slate-500">
+                                Impact
+                              </p>
+                              <p className="mt-2 text-sm leading-7 text-slate-300">{project.caseStudy.impact}</p>
+                            </div>
+                          </div>
+                        ) : null}
                       </div>
                     </m.div>
                   ) : null}

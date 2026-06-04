@@ -1,9 +1,29 @@
+import allianzLogo from "./client-logos/allianz.svg";
 import cimbLogo from "./client-logos/cimb.svg";
 import kloudspotLogo from "./client-logos/kloudspot.png";
 import optimumLogo from "./client-logos/optimum.png";
 import rakbankLogo from "./client-logos/rakbank.ico";
+import softwareOneLogo from "./client-logos/softwareone.svg";
 
 export const clientLogoMap = {
+  "Allianz Technology": {
+    src: allianzLogo,
+    href: "https://www.allianz.com/",
+    alt: "Allianz official logo",
+    imageClassName: "h-8 w-auto max-w-[150px]",
+    frameClassName:
+      "min-h-20 min-w-[180px] rounded-[1.5rem] border border-white/10 bg-white px-5 py-4",
+    note: "Insurance Technology",
+  },
+  SoftwareOne: {
+    src: softwareOneLogo,
+    href: "https://www.softwareone.com/",
+    alt: "SoftwareOne official logo",
+    imageClassName: "h-12 w-auto max-w-[155px]",
+    frameClassName:
+      "min-h-20 min-w-[180px] rounded-[1.5rem] border border-white/10 bg-white px-5 py-4",
+    note: "Consulting Partner",
+  },
   RAKBANK: {
     src: rakbankLogo,
     href: "https://www.rakbank.ae/",

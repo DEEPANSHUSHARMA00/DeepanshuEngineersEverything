@@ -21,7 +21,7 @@ function Contact({ content }) {
           <p className="text-base leading-8 text-slate-300 sm:text-lg">{content.message}</p>
         </div>
 
-        <div className="mt-10 grid w-full gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {content.links.map((link) => {
             const external = link.href.startsWith("http");
 
@@ -29,6 +29,7 @@ function Contact({ content }) {
               <motion.a
                 key={link.label}
                 href={link.href}
+                download={link.download ? "" : undefined}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noreferrer" : undefined}
                 className="group rounded-[1.6rem] border border-white/10 bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-transparent px-5 py-6 text-left shadow-[0_16px_45px_rgba(2,6,23,0.22)] transition duration-300 hover:-translate-y-1.5 hover:border-cyan-300/35 hover:shadow-[0_0_30px_rgba(34,211,238,0.18),0_24px_60px_rgba(2,6,23,0.34)]"

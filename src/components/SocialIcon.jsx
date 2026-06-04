@@ -34,6 +34,20 @@ function SocialIcon({ name, className = "h-4 w-4" }) {
     );
   }
 
+  if (name === "Resume") {
+    return (
+      <svg {...sharedProps}>
+        <path
+          d="M7 3.5h6.2L18 8.3v12.2H7zm6 0V9h5M9.8 13h5.4M9.8 16h5.4M9.8 10h1.9"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
   return (
     <svg {...sharedProps}>
       <path

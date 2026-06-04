@@ -4,6 +4,7 @@ Apache Flink Developer | Confluent Kafka Engineer | Real-Time Streaming Systems
 +91-6264440559 | sdeepanshu819@gmail.com | India
 LinkedIn: https://www.linkedin.com/in/deepanshu-sharma-53205a174
 GitHub: https://github.com/DEEPANSHUSHARMA00
+Portfolio: https://deepanshu-engineers-everything.vercel.app/
 
 PROFESSIONAL SUMMARY
 Confluent Certified Kafka and Apache Flink focused developer with 4.5 years of experience building real-time, event-driven systems across banking, insurance, and IoT analytics. Strong hands-on background in Confluent Kafka, Apache Flink/Flink SQL, Kafka Connect, CDC pipelines, Spring Boot, Redis, SQL, OpenSearch, AWS, Kubernetes, and production troubleshooting. Experienced in translating fragmented database changes into reliable streaming pipelines, stateful transformations, materialized views, and low-latency search/read models. Positioning: developer-first streaming engineer with Kafka administration depth as an advantage, not the headline.

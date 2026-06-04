@@ -3,26 +3,36 @@ import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Clients from "./components/Clients";
+import MetricsStrip from "./components/MetricsStrip";
 import About from "./components/About";
 import Philosophy from "./components/Philosophy";
+import StreamingArchitecture from "./components/StreamingArchitecture";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import StreamingDepth from "./components/StreamingDepth";
 import Experience from "./components/Experience";
 import Certifications from "./components/Certifications";
+import RoleFit from "./components/RoleFit";
+import Insights from "./components/Insights";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import {
   about,
+  architecture,
   clients,
   contact,
   experience,
   footer,
   hero,
+  insights,
+  metrics,
   navItems,
   certifications,
   philosophy,
   projects,
+  roleFit,
   skills,
+  streamingDepth,
 } from "./assets/portfolioContent";
 import { pageTransition } from "./sections/motion";
 import useActiveSection from "./sections/useActiveSection";
@@ -88,12 +98,17 @@ function App() {
         >
           <Hero hero={hero} />
           <Clients content={clients} />
+          <MetricsStrip content={metrics} />
           <About content={about} />
           <Philosophy content={philosophy} />
+          <StreamingArchitecture content={architecture} />
           <Projects items={projects} />
           <Skills groups={skills} />
+          <StreamingDepth content={streamingDepth} />
           <Experience content={experience} />
           <Certifications content={certifications} />
+          <RoleFit content={roleFit} />
+          <Insights content={insights} />
           <Contact content={contact} />
         </motion.main>
 

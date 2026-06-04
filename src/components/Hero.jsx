@@ -141,6 +141,7 @@ function Hero({ hero }) {
               <motion.a
                 key={action.label}
                 href={action.href}
+                download={action.download ? "" : undefined}
                 className={`inline-flex min-h-12 items-center justify-center rounded-full px-7 py-3 text-sm font-medium transition duration-200 ${buttonStyles[action.variant]}`}
                 whileHover={reduceMotion ? undefined : { y: -4, scale: 1.015 }}
                 whileTap={reduceMotion ? undefined : { scale: 0.985 }}
