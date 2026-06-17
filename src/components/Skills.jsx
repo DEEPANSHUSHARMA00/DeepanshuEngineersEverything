@@ -15,7 +15,7 @@ const iconMap = {
       />
     </svg>
   ),
-  "Streaming Engineering": (
+  "Streaming Platforms": (
     <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
       <path
         d="M4 8c2.5 0 2.5 3 5 3s2.5-3 5-3 2.5 3 5 3M4 16c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3"
@@ -26,7 +26,7 @@ const iconMap = {
       />
     </svg>
   ),
-  "CDC & Search Models": (
+  "Delivery Management": (
     <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
       <path
         d="M6 10.5 12 7l6 3.5M6 13.5 12 17l6-3.5M12 7v10"
@@ -37,7 +37,7 @@ const iconMap = {
       />
     </svg>
   ),
-  "Cloud & Operations": (
+  "Ops & Reliability": (
     <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
       <path
         d="M8.5 18.5h8a4 4 0 0 0 .4-8A5.5 5.5 0 0 0 6.3 9.4 4.2 4.2 0 0 0 8.5 18.5Z"

@@ -1,66 +1,66 @@
 DEEPANSHU SHARMA
-Apache Flink Developer | Confluent Kafka Engineer | Real-Time Streaming Systems
+Confluent Delivery Manager
+Banking Modernization | Real-Time Streaming Delivery | Enterprise Data Platforms
 
 +91-6264440559 | sdeepanshu819@gmail.com | India
 LinkedIn: https://www.linkedin.com/in/deepanshu-sharma-53205a174
-GitHub: https://github.com/DEEPANSHUSHARMA00
 Portfolio: https://deepanshu-engineers-everything.vercel.app/
+GitHub: https://github.com/DEEPANSHUSHARMA00
 
 PROFESSIONAL SUMMARY
-Confluent Certified Kafka and Apache Flink focused developer with 4.5 years of experience building real-time, event-driven systems across banking, insurance, and IoT analytics. Strong hands-on background in Confluent Kafka, Apache Flink/Flink SQL, Kafka Connect, CDC pipelines, Spring Boot, Redis, SQL, OpenSearch, AWS, Kubernetes, and production troubleshooting. Experienced in translating fragmented database changes into reliable streaming pipelines, stateful transformations, materialized views, and low-latency search/read models. Positioning: developer-first streaming engineer with Kafka administration depth as an advantage, not the headline.
+Confluent Delivery Manager with 4.5+ years of experience across banking, insurance, enterprise data platforms, and real-time streaming systems. Experienced in leading client-facing delivery discussions, converting business requirements into implementation scope, contributing to HLD/LLD, coordinating delivery planning, and supporting production-grade streaming modernization programs.
+
+Hands-on engineering foundation with a delivery-first mindset: bridging business expectations, architecture decisions, implementation teams, and production realities. Proven experience across CIMB Bank Malaysia, RAKBANK UAE, ACLEDA Bank Cambodia, Allianz Global, and partner-led modernization initiatives where correctness, security, traceability, resilience, and business continuity are critical.
+
+CLIENT DELIVERY VALUE
+Enterprise Ownership: Requirement discovery, solution planning, implementation readiness, delivery alignment, and production support.
+Banking Production Confidence: Platform operations, troubleshooting, environment stability, access concerns, incident support, and service continuity.
+Architecture to Execution: HLD/LLD inputs, rollout sequencing, validation checkpoints, delivery scope, and operational handover planning.
+Stakeholder Trust: Business, architecture, application, platform, operations, and partner team alignment.
+Platform Expertise: Kafka-based platforms, Confluent Platform, Kafka Connect, Schema Registry, stream processing, CDC, and production readiness.
+Delivery Governance: Risk/dependency tracking, implementation checkpoints, validation alignment, support readiness, and controlled rollout planning.
 
 PROFESSIONAL EXPERIENCE
 
-Kafka & Flink Streaming Consultant | SoftwareOne / Allianz Technology | Apr 2026 - Present | Freelance / Client Project
-- Working on Allianz R2 Summary Search modernization, replacing slow query-time relational joins with a real-time streaming materialization pipeline.
-- Designed and validated architecture: RDS/Aurora PostgreSQL CDC -> Kafka Connect on AWS EKS -> Allianz EBS Confluent Kafka -> AWS Managed Apache Flink -> Amazon OpenSearch.
-- Modeled CONTRACT_ID as the universal key for Kafka partitioning, Flink keyed state, entity reconstruction, and OpenSearch document ID.
-- Defined clean component boundaries: Kafka Connect/Debezium for CDC and simple SMTs; Flink for stateful multi-table joins, out-of-order handling, enrichment, incremental recomputation, and snapshot emission.
-- Created technical HLD/deck material for stakeholders covering CDC ingestion, managed Flink vs Confluent ecosystem trade-offs, OpenSearch rebuild/replay strategy, source database load risk, and operational ownership.
+Ironbook.ai | India | Confluent Delivery Manager | March 2026 - Present
+- Own delivery alignment for banking and enterprise modernization opportunities, converting client objectives into clear implementation scope, execution approach, timelines, dependencies, risks, and readiness checkpoints.
+- Lead stakeholder-facing solution discussions around real-time data movement, platform adoption, integration readiness, operational risks, production rollout considerations, and long-term platform direction.
+- Prepare and review delivery artifacts including solution notes, HLD/LLD inputs, implementation plans, production-readiness checkpoints, stakeholder discussion material, and rollout considerations.
+- Drive delivery planning by translating client requirements into execution scope covering source systems, target systems, data flow design, validation needs, dependencies, operational risks, and rollout sequencing.
+- Contributed to Allianz R2 modernization by supporting HLD/LLD preparation and delivery planning for real-time data synchronization, ingestion design, processing flow, search freshness, implementation sequencing, and production rollout readiness.
+- Supported ACLEDA Bank Cambodia and Bank of Commerce modernization discussions through banking data movement planning, stakeholder communication, platform adoption narrative, implementation readiness, and delivery feasibility.
 
-Senior Kafka & Flink Developer | Optimum InfoSystem - Client: RAKBANK UAE | Mar 2026 - Present | Banking / Real-Time Data Systems
-- Contributing to banking-grade Kafka/Flink initiatives focused on event-driven data movement, CDC patterns, and Confluent ecosystem implementation.
-- Worked with Confluent Kafka/Kafka Connect setup, connector plugin installation, distributed worker behavior, network/DNS troubleshooting, and integration validation.
-- Prepared Kafka Connect and CDC proof-of-concept flows for banking use cases, including connector runtime checks, topic/config validation, and production-readiness considerations.
-- Collaborated on demo/pre-sales style technical preparation for banking clients, translating requirements into Kafka/Flink pipeline steps and success criteria.
+Optimum InfoSystem | Client: RAKBANK UAE | Senior Data Streaming Engineer / Kafka Consultant | September 2025 - March 2026
+- Supported RAKBANK banking data modernization involving real-time data movement, source-to-target streaming flows, downstream integrations, and production-grade implementation planning.
+- Worked on delivery execution for core banking data integration use cases, translating business and downstream requirements into technical flows, validation steps, operational considerations, and support expectations.
+- Supported production-environment planning by identifying integration dependencies, reliability concerns, rollout risks, data correctness concerns, downstream impact, and support requirements.
+- Collaborated with stakeholders and technical teams to align implementation feasibility, flow expectations, operational impact, production support needs, and controlled delivery approach.
+- Contributed to delivery planning and execution for banking systems where uptime, correctness, traceability, data consistency, and controlled rollout were critical.
 
-Senior Data Streaming Engineer / Kafka Specialist | CIMB Bank Malaysia | May 2024 - Aug 2025 | Banking
-- Built and supported high-throughput streaming pipelines using Confluent Kafka, Apache Flink, Redis, SQL, and Spring Boot for the OCTO banking ecosystem.
-- Worked with a large multi-broker Confluent Kafka setup, including topic design, partition planning, consumer group behavior, producer/consumer tuning, retention planning, ACLs, and operational troubleshooting.
-- Implemented Flink-based event processing patterns including event-time windows, stateful enrichment, and behavior/event pattern detection for engagement and analytics use cases.
-- Handled large-volume data streams, with prior resume metrics indicating 50M+ events/day and sub-50ms latency targets in mission-critical banking environments.
-- Developed Spring Boot REST APIs and SQL-backed services supporting CRM, dashboards, campaign analytics, and real-time user engagement systems.
-- Improved stream efficiency through partitioning/parallelism tuning and collaborated across engineering, infra, and business teams for production incident analysis.
+Customer Centria | Client: CIMB Bank Malaysia | Senior Data Streaming Engineer / Kafka Specialist | May 2024 - August 2025
+- Delivered and supported production streaming, caching, and backend capabilities for CIMB Bank Malaysia, supporting critical banking application workloads.
+- Managed platform operations across production and non-production environments, including topic management, consumer issues, access concerns, performance checks, environment stability, and incident troubleshooting.
+- Worked closely with application, platform, and operations teams to support reliable delivery of banking services across streaming, caching, backend, and database layers.
+- Supported service continuity by resolving production issues across event flows, Redis, backend services, SQL, deployment layers, and infrastructure dependencies.
+- Helped maintain banking-grade reliability through stable data flows, operational visibility, issue resolution, root-cause support, and production support coordination.
+- Supported controlled changes and environment readiness activities where reliability, traceability, access management, and business continuity were critical.
 
-Data Engineer - Real-Time Streaming | Kloudspot Inc. | Feb 2022 - Apr 2024 | IoT Analytics / Hospitality
-- Built real-time analytics pipelines using Apache Kafka and Apache Flink for IoT sensor streams such as WiFi, Bluetooth, and camera-derived events.
-- Developed Flink jobs for event-time windows, stateful enrichment, aggregations, and near-real-time business metrics consumed by dashboards.
-- Built Java/Spring Boot microservices and REST APIs for analytics products used by hospitality clients in Japan and Dubai.
-- Optimized MongoDB aggregation and indexing paths, reducing query latency from approximately 40 seconds to 10 seconds in analytics workflows.
-- Managed Kafka and Redis components in Docker/Kubernetes-based environments and supported production troubleshooting across Linux systems.
-- Delivered a P2P video conferencing backend module that reduced dependency on third-party licensing for a product capability.
+Kloudspot Inc. | Bangalore, India | Software Engineer / Data Engineer | February 2022 - April 2024
+- Built real-time analytics and backend capabilities for enterprise IoT, location intelligence, and data-driven products.
+- Worked on streaming data pipelines, backend APIs, and analytics services that transformed raw device and sensor data into business insights.
+- Developed Java/Spring Boot services, data processing flows, scheduled jobs, and integration layers for enterprise analytics platforms.
+- Improved application and analytics performance through backend optimization, query improvements, indexing, and data-model refinement.
 
-SELECTED PROJECT DEPTH
-Allianz R2 Policy Summary Search: Real-time policy denormalization using CDC from PostgreSQL, Kafka/EBS transport, Flink stateful entity reconstruction, and OpenSearch serving model with one document per CONTRACT_ID.
-CIMB OCTO Banking Streaming Platform: Kafka + Flink + Redis streaming pipelines for banking engagement, CRM, dashboards, and high-volume user activity processing.
-Kloudspot IoT Analytics Platform: Kafka/Flink pipelines over sensor data, real-time aggregation, Spring Boot services, MongoDB optimization, and Redis-backed low-latency workloads.
+SELECTED BANKING & ENTERPRISE PROJECTS
+ACLEDA Bank Cambodia: Banking data movement, source integration, transformation planning, implementation readiness, delivery approach, and stakeholder-facing communication.
+Allianz R2 Search Modernization: HLD/LLD contribution for real-time search modernization, ingestion design, data synchronization, processing flow, search freshness, and production rollout readiness.
+RAKBANK UAE: Streaming delivery for core banking data movement, downstream integration, production environment planning, validation needs, and operational considerations.
+CIMB Bank Malaysia: Production streaming, caching, and backend capabilities for banking application workloads, troubleshooting, service continuity, and platform reliability.
 
-STREAMING ENGINEERING DEPTH
-- Designs streaming pipelines around correctness first: keys, ordering, event-time behavior, replayability, idempotent sinks, and schema evolution before writing transformations.
-- Comfortable explaining why Kafka Connect should capture and normalize change events while Flink owns joins, state, enrichment, late events, and output materialization.
-- Understands Kafka internals required by developers: partition strategy, ordering guarantees, consumer group rebalancing, offset commits, retention, compaction, ISR/replication, and producer tuning.
-- Builds with production realities in mind: connector failures, network/DNS issues, consumer lag, backpressure, poison messages, DLQ paths, monitoring, and controlled rebuild/replay strategy.
-- Strong banking/insurance domain fit: experience with regulated environments, high-volume data, enterprise Kafka governance, access controls, PII-sensitive pipelines, and stakeholder-facing architecture discussions.
+DELIVERY ARTIFACTS, PRACTICES & TECHNICAL FOUNDATION
+Delivery Artifacts & Practices: HLD/LLD preparation support; implementation planning and rollout sequencing; readiness checkpoints, risk/dependency tracking; stakeholder review and delivery alignment; environment validation and production impact assessment; operational handover, release support, controlled rollout planning.
+Technical Foundation: Apache Kafka, Confluent Platform/Cloud, Kafka Connect, Schema Registry, Apache Flink, Flink SQL, CDC, event-driven architecture, Java, Spring Boot, REST APIs, Redis, MySQL, PostgreSQL, MongoDB, OpenSearch/Elasticsearch.
+Ops/Reliability: Linux, Docker, Jenkins, Git, production troubleshooting, platform operations, incident support, access control, encryption concepts.
 
-TECHNICAL TOOLBOX
-Streaming: Apache Flink, Flink SQL, Confluent Kafka, Apache Kafka, Kafka Connect, Debezium CDC patterns, Kafka Streams basics, ksqlDB awareness
-Data Formats & Governance: Schema Registry, Avro/Protobuf awareness, JSON, schema evolution, topic governance, retention/compaction concepts
-Backend: Java, Spring Boot, REST APIs, multithreading, async processing, SQL, PostgreSQL, MySQL, MongoDB, Redis, OpenSearch
-Cloud & Ops: AWS EC2/EKS/RDS/S3, AWS Managed Service for Apache Flink, GCP, Docker, Kubernetes, Jenkins CI/CD, Linux, production troubleshooting
-
-EDUCATION & CERTIFICATION
-- B.Tech in Computer Science & Engineering - Madhav Institute of Technology and Science, 2022
-- Confluent Certified Administrator for Apache Kafka
-
-ROLE FIT
-Best-fit roles: Apache Flink Developer, Confluent Kafka Developer, Real-Time Data Engineer, Streaming Platform Developer, CDC / Event-Driven Architecture Engineer.
+EDUCATION
+Madhav Institute of Technology and Science (MITS), Gwalior | Bachelor of Technology - Computer Science and Engineering | 2022

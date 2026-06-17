@@ -10,13 +10,13 @@
     Deepanshu Sharma
   </text>
   <text x="584" y="320" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">
-    Kafka & Flink Streaming Engineer
+    Confluent Delivery Manager
   </text>
   <text x="584" y="388" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="24">
-    CDC pipelines, Confluent Kafka, Apache Flink,
+    Banking modernization, streaming delivery,
   </text>
   <text x="584" y="424" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="24">
-    OpenSearch materialization, and backend systems.
+    HLD/LLD planning, and production readiness.
   </text>
   <defs>
     <linearGradient id="paint0_linear" x1="84" y1="40" x2="1090" y2="592" gradientUnits="userSpaceOnUse">

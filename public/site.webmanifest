@@ -1,7 +1,7 @@
 {
   "name": "Deepanshu Sharma Portfolio",
   "short_name": "Deepanshu",
-  "description": "Kafka and Flink streaming engineer portfolio focused on CDC pipelines, stateful processing, and real-time data infrastructure.",
+  "description": "Confluent Delivery Manager portfolio focused on banking modernization, real-time streaming delivery, enterprise data platforms, and production readiness.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#020617",
