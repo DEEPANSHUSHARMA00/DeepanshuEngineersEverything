@@ -16,8 +16,8 @@ const socialLinks = {
   },
   resume: {
     label: "Resume",
-    href: "/Deepanshu-Sharma-Resume.txt",
-    meta: "Download latest resume",
+    href: "/Deepanshu-Sharma-Resume.pdf",
+    meta: "Download latest PDF resume",
     download: true,
   },
 };
@@ -39,7 +39,7 @@ export const hero = {
     "4.5+ years across banking modernization, enterprise data platforms, and real-time streaming delivery, bridging client objectives, architecture decisions, implementation teams, and production readiness.",
   actions: [
     { href: "#architecture", label: "View Architecture", variant: "primary" },
-    { href: "/Deepanshu-Sharma-Resume.txt", label: "Download Resume", variant: "secondary", download: true },
+    { href: "/Deepanshu-Sharma-Resume.pdf", label: "Download Resume", variant: "secondary", download: true },
     { href: "#contact", label: "Contact", variant: "secondary" },
   ],
   rotatingTechnologies: ["Confluent Delivery", "Banking Modernization", "Kafka Platforms", "HLD/LLD Planning", "Production Readiness"],
